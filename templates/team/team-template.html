@@ -263,6 +263,14 @@ background:linear-gradient(to top, rgb(180, 180, 180),white) ;
                             <div class="col-lg-4">
                             <div class="team-tab-menu">
                             <ul class="nav nav-tabs " id="myTab" role="tablist">
+                                <li class= "nav-item each-mem-container">
+                                    <a class="nav-link d-flex active team-min " id="tab_item_{%id%}" data-toggle="tab" href="#team_member_{%id%}" role="tab" aria-selected="true">
+                                    <div class="team-mem-icon">
+                                    <img src="{%img-min%}" alt="JSOFT">
+                                    </div>
+                                    <h5>{%name%}</h5>
+                                    </a>
+                                     </li>   
                            {%team-mem-min-list%}
                             </ul>
                             </div>
@@ -271,7 +279,30 @@ background:linear-gradient(to top, rgb(180, 180, 180),white) ;
                             
                             <div class="col-lg-8">
                             <div class="tab-content" id="myTabContent">
-                            
+                                <div class="tab-pane fade active show " id="team_member_{%id%}" role="tabpanel" aria-labelledby="tab_item_{%id%}">
+                                    <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                    <div class="team-member-pro-pic  text-center">
+                                    <img src="{%img-full%}" alt="JSOFT">
+                                    </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 align-self-center">
+                                    <div class="team-member-info  text-center ">
+                                    <h4>{%name%}</h4>
+                                    <h5>{%position%}</h5>
+                                    <span class="quote-icon"><i class="fa fa-quote-left"></i></span>
+                                    <p>{%desc%}</p>
+                                    <div class="team-social-icon">
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                                     <a href="#"><i class="fab fa-dribbble"></i></a>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
                             {%team-mem-info%}
                             
                             </div>
@@ -301,7 +332,7 @@ background:linear-gradient(to top, rgb(180, 180, 180),white) ;
       <h3 class="text-center mb-3">Newsletter</h3>
    
     
-        <form class action="/action_page2.php">
+        <form class action="/action_page2.php" style="">
       <div class="row  justify-content-center" >
           <input type="email" class="form-control col-lg-7 ml-5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
   
@@ -318,6 +349,11 @@ background:linear-gradient(to top, rgb(180, 180, 180),white) ;
   <h4 col-lg-12 style="text-align: center ;margin-bottom:0;">Copyright &copy 2019 CAR-EVERYTHING</h4>
   </div>
   </footer>
+  <script>
+    
+
+
+  </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 

@@ -17,25 +17,35 @@ let teammin1=teammin+" ";
 let teambig=fs.readFileSync("./templates/team/team-mem-full.html");
 let teambig1=teambig + " ";
 try{
-    let a=" "; let b=" ";
+    var a=" "; var b=" ";
   await teammodel.find({}).then((result)=>{
     var i;
-    for(i=0;i<result.length;i++)
-  { 
-     teammin=teammin1.replace(/{%name%}/g,result[i]["name"]);
-     teammin=teammin.replace(/{%img-min%}/g,result[i]["imagemin"]);
-     a=a+teammin;
+    team=team1.replace(/{%id%}/g,result[0]["_id"]);
+    team=team.replace(/{%img-min%}/g,result[0]["imagemin"]);
+      team=team.replace(/{%name%}/g,result[0]["name"]);
+      team=team.replace(/{%img-full%}/g,result[0]["imagebig"]);
+      team=team.replace(/{%position%}/g,result[0]["position"]);
+      team=team.replace(/{%desc%}/g,result[0]["description"]);
+ 
+  for(i=1;i<result.length;i++) 
+  {  let   teambig2=teambig1.replace(/{%name%}/g,result[i]["name"]);
+       teambig2=teambig2.replace(/{%id%}/g,result[i]["_id"]);
+ 
+    teambig2=teambig2.replace(/{%img-full%}/g,result[i]["imagebig"]);
+    teambig2=teambig2.replace(/{%position%}/g,result[i]["position"]);
+    teambig2=teambig2.replace(/{%desc%}/g,result[i]["description"]);
+    b=b+teambig2;
   }
-  for(i=0;i<result.length;i++) 
-  {
-    teambig=teambig1.replace(/{%name%}/g,result[i]["name"]);
-    teambig=teambig.replace(/{%img-full%}/g,result[i]["imagebig"]);
-    teambig=teambig.replace(/{%position%}/g,result[i]["position"]);
-    teambig=teambig.replace(/{%desc%}/g,result[i]["description"]);
-    b=b+teambig;
+  for(i=1;i<result.length;i++)
+  { let teammin2=teammin1.replace(/{%id%}/g,result[i]["_id"]);
+     teammin2=teammin2.replace(/{%name%}/g,result[i]["name"]);
+    teammin2=teammin2.replace(/{%img-min%}/g,result[i]["imagemin"]);
+     a=a+teammin2;
   }
-  team=team1.replace(/{%team-mem-min-list%}/g,a);
+
+  team=team.replace(/{%team-mem-min-list%}/g,a);
   team=team.replace(/{%team-mem-info%}/g,b);
+
   res.end(team);
 })
 }
