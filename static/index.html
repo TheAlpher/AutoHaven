@@ -12,6 +12,39 @@
    <title>Home</title> 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <style>
+   @media only screen and (max-width: 770px) {
+    .navbar-brand{
+  font-size:30px !important;
+}
+.nav li a {
+  font-size:15px !important;
+}
+.carousel-container{
+  margin-top:5vh;
+}
+.carousel-item{
+max-height: 40vh;  
+}
+.each-slide h1{
+  font-size:4vh !important;
+
+}
+.each-slide p{
+  font-size:1.5vh !important;
+}
+.form-innercontainer{
+  margin-left:15vw !important;
+  width:70vw !important;
+  
+}
+form{
+  justify-content:center !important;
+}
+.subtitles h2{
+  font-size:4vh !important;
+}
+   }
+
 *{margin:0;
   padding:0;
   font-family: "Lato";
@@ -40,7 +73,7 @@ background-size:cover;
 }
 .each-slide h1{
   padding-left:5%;
-  padding-top:5%;
+  padding-top:3%;
 font-size:5vw;
 color:rgb(241, 245, 12);
 
@@ -1024,7 +1057,7 @@ color: rgb(241, 245, 12)
 }
 .app-promo-info
 { text-align: center;
-width:40vw;
+
 font-size:2rem;
 margin-top:7vmax;
 margin-bottom: 7vmax;
@@ -1275,8 +1308,8 @@ position:fixed;
     </div>
 
     <div class="row service d-flex justify-content-around   " style="max-width:99% !important">
-      <div class="col-lg-3 col-md-6 col-sm-12 services justify-content-center">
-          <div class="col-lg-12 col-md-12 col-sm-10  each-service">
+      <div class="col-lg-3 col-md-6 col-sm-10 services justify-content-center">
+          <div class="col-lg-12 col-md-12 col-sm-12  each-service">
          
               <div class="col-lg-12 col-md-12 col-sm-12 flipcontainer">
                 <div class="flipper">
@@ -1301,7 +1334,7 @@ position:fixed;
     
     
             </div>
-        <div class= "col-lg-12 col-md-12 col-sm-10 each-service">
+        <div class= "col-lg-12 col-md-12 col-sm-12 each-service">
             <div class=" col-lg-12 col-md-12 col-sm-12 flipcontainer">
               <div class="flipper">
                 <div class="col-lg-12 col-md-12 col-sm-12 each-service-logo">
@@ -1322,9 +1355,9 @@ position:fixed;
           </div>
         
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 services justify-content-center">
+      <div class="col-lg-3 col-md-6 col-sm-10 services justify-content-center">
 
-          <div class="col-lg-12 col-md-12 col-sm-10  each-service">
+          <div class="col-lg-12 col-md-12 col-sm-12  each-service">
               
               <div class="col-lg-12 col-md-12 col-sm-12 flipcontainer" >
                 <div class="flipper">
@@ -1349,7 +1382,7 @@ position:fixed;
     
     
             </div>
-        <div class="col-lg-12 col-md-12 col-sm-10  each-service">
+        <div class="col-lg-12 col-md-12 col-sm-12  each-service">
           <div class="col-lg-12 col-md-12 col-sm-12 flipcontainer" ontouchstart="this.classList.toggle('hover')">
             <div class="flipper">
               <div class="col-lg-12 col-md-12 col-sm-12 each-service-logo">
@@ -1373,8 +1406,8 @@ position:fixed;
         
 
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 services justify-content-center">
-          <div class="col-lg-12 col-md-12 col-sm-10  each-service">
+      <div class="col-lg-3 col-md-6 col-sm-12 services justify-content-around">
+          <div class="col-lg-12 col-md-12 col-sm-12  each-service">
               <div class="flipcontainer col-lg-12 col-md-12 col-sm-12">
                 <div class="flipper">
     
@@ -1455,7 +1488,7 @@ position:fixed;
     </div>
     </div>
    <div class="row text-center d-flex justify-content-around" style="width:99.9% !important">
-      <div class=" col-sm-8 col-md-5 col-lg-3 cardwrapper justify-content-center">
+      <div class=" col-sm-12 col-md-5 col-lg-3 cardwrapper justify-content-center">
         <div class="card bg-transparent">
         <div class="card-title justify-content-center"> <i class="far fa-3x fa-id-badge"></i><h3>Professional Service</h3></div> 
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla esse, voluptatem vitae hic molestiae nisi doloremque velit. Debitis nihil accusantium dicta perferendis, blanditiis molestias, laudantium atque asperiores quis at ex!
@@ -1505,17 +1538,18 @@ position:fixed;
   
     <!-- <div class=section-spacing>
   </div>  -->
-  <div class=" row  app-promo d-flex justify-content-around pt-5">
+  <div class=" row  app-promo  ">
     <div class="app-promo-info text-center col-md-12 col-sm-12 col-lg-7">
       <h3>SAVE 30% <br/>WITH THE APP</h3>
       <p>Easy & Fast .. Book car in 60 seconds</p>
-      <div class="app-promo-info-links">
-        <div class="store"><a href=# class=app-link><i class="fab fa-2x fa-android"></i><p>Android Store</p> </a></div>
-        <div class="store"><a href=# class=app-link><i class="fab fa-2x fa-apple"></i><p> Apple Store</p> </a></div>
+      <div class="app-promo-info-links col-sm-12 justify-content-center">
+        <div class="store mr-5  "><a href=# class=app-link><i class="fab fa-2x fa-android"></i><p>Android Store</p> </a></div>
+        <div class="store "><a href=# class=app-link><i class="fab fa-2x fa-apple"></i><p> Apple Store</p> </a></div>
       </div>
     </div>
-    <img class="mobile-app col-sm-8 col-md-9 col-lg-3 justify-self-center" src="../img/home/mobile-app.png"></div>
-  
+    <div class="col-sm-12 col-md-12 col-lg-3  pt-5 pl-5 pb-5 text-center">
+    <img class="mobile-app  justify-self-center " src="../img/home/mobile-app.png"></div>
+  </div>
   <!-- <div class=section-spacing>
   </div>  </div>--> 
 </body>

@@ -4,7 +4,7 @@ const teammodel=require("../model/teammodel.js");
 const fs=require('fs');
 
 module.exports.gethome= (req,res)=>{
-let home=    fs.readFileSync("./static/index.html"); 
+let home=fs.readFileSync("./static/index.html"); 
 let home1=home+" ";
 
 res.end(home1);

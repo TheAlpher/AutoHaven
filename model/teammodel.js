@@ -1,4 +1,5 @@
 const mongoose=require("mongoose");
+const validator=require("validator");
 const DB= "mongodb+srv://thealpher:123abc@cluster1-ig5en.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(DB,{
     useNewUrlParser:true,
