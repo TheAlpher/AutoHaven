@@ -3,7 +3,7 @@ let carRouter = express.Router();
 // let obj=require("../controller/plancontroller");
 // let createPlan=obj.createPlan();
 // createPlan();
-let {gethome,getteam,addteammem,updateteammem,removeteammem,getaboutus,getcontact,getallcars,getcardetails,addcar,updatecar,removecar
+let {addnewslettersub,gethome,getteam,addteammem,updateteammem,removeteammem,getaboutus,getcontact,getallcars,getcardetails,addcar,updatecar,removecar
  
 } = require("../controller/carcontroller.js");
 carRouter
@@ -12,6 +12,9 @@ carRouter
 carRouter
 .route('/team')
 .get(getteam);
+carRouter
+.route('/api/newsletter')
+.post(addnewslettersub)
 carRouter
 .route('/team/add')
 .post(addteammem);

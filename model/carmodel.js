@@ -1,14 +1,6 @@
 const mongoose=require("mongoose");
 
-const DB= "mongodb+srv://thealpher:123abc@cluster1-ig5en.mongodb.net/test?retryWrites=true&w=majority";
-mongoose.connect(DB,{
-    useNewUrlParser:true,
-    useCreateIndex:true
-})
-.then(conn=>{
-// console.log(conn.connection);
-console.log("Connected to DB");
-});
+
 const carschema = new mongoose.Schema(
     {   
         Name:{type:String,required:true,unique:true},

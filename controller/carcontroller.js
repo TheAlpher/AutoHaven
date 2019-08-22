@@ -1,8 +1,34 @@
 
 const Carmodel=require("../model/carmodel.js");
 const teammodel=require("../model/teammodel.js");
+const news=require("../model/newsletter");
 const fs=require('fs');
+module.exports.addnewslettersub=async (req,res)=>{
+  
 
+    newsletter= {
+        email:req.body.email
+     
+    }
+    try{
+   var book=await  news.create(newsletter);
+           
+        res.json({
+            message: 'NewsLetter service added to '+book.email
+        })
+      await  alert(res.data.message);
+ 
+   }
+   catch(err)
+   {     console.log(book);
+     res.json({
+  
+         message:err
+     })
+   }
+
+
+}
 module.exports.gethome= (req,res)=>{
 let home=fs.readFileSync("./static/index.html"); 
 let home1=home+" ";

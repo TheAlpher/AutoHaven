@@ -9,6 +9,7 @@ mongoose.connect(DB,{
 // console.log(conn.connection);
 console.log("Connected to DB");
 });
+
 const teamschema = new mongoose.Schema(
     {   
      name:{type:String,required:true, validate : function()
