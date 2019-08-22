@@ -37,28 +37,28 @@ app.post('/api/booking',(req,res)=>{
 
 
 })
-app.post('/api/newsletter',(req,res)=>{
-
-    newsletter= {
-        email:req.body.email
+// app.post('/api/newsletter',(req,res)=>{
+//      console.log('abc@@@@@@')
+//     newsletter= {
+//         email:req.body.email
      
-    }
-    try{
-    news.create(newsletter)
-    .then(book => {
-        res.json({
-            message: 'NewsLetter service added to '+book.email
-        })
-    })
-   }
-   catch(err)
-   {
-     res.json({
-         message:"Please enter a valid email"
-     })
-   }
+//     }
+//     news.create(newsletter)
+//     .then(nu => {
+//         console.log('Hi',nu)
+//         res.json({
+//             news: "bhjdunga roz akhbaar" + nu.email
+//         })
+//     })
+//     .catch(err => {
+//        console.log(err)
+//        res.json(err.errmsg)
+//       })
+// })
+    
 
-})
+    
+   
 
 app.use("/car",carRouter);
 app.use(express.static("public"));

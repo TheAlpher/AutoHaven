@@ -12,9 +12,14 @@ carRouter
 carRouter
 .route('/team')
 .get(getteam);
+// carRouter
+// .route('/api/newsletter')
+// .get(getteam);
+
 carRouter
 .route('/api/newsletter')
 .post(addnewslettersub)
+
 carRouter
 .route('/team/add')
 .post(addteammem);

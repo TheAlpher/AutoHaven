@@ -3,31 +3,39 @@ const Carmodel=require("../model/carmodel.js");
 const teammodel=require("../model/teammodel.js");
 const news=require("../model/newsletter");
 const fs=require('fs');
+const validator=require('validator');
 module.exports.addnewslettersub=async (req,res)=>{
-  
 
-    newsletter= {
-        email:req.body.email
-     
-    }
-    try{
-   var book=await  news.create(newsletter);
-           
-        res.json({
-            message: 'NewsLetter service added to '+book.email
-        })
-      await  alert(res.data.message);
+           var x=validator.isEmail(req.body.email);
+     if(x)
+     {
+  newsletter= {
+    email:req.body.email
  
-   }
-   catch(err)
-   {     console.log(book);
-     res.json({
-  
-         message:err
-     })
-   }
-
-
+}
+  news.create(newsletter)
+.then(nu => {
+    console.log('Hi',nu)
+ res.json({
+ message: "Newsletter Subscription added to" + nu.email
+ })
+    
+    
+})
+.catch(err => {
+ console.log(err);
+res.json({
+  message:"Duplicate email entry"
+})
+   
+   
+  })
+}
+else{
+  res.json({
+    message:"Please enter a valid email"
+  })
+}
 }
 module.exports.gethome= (req,res)=>{
 let home=fs.readFileSync("./static/index.html"); 
