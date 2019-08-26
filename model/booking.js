@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
          type:String,required:true 
      },
      telephone: {
-         type: String,required:true
+         type: String,required:true,unique:true
          
      },
      pickcar: {

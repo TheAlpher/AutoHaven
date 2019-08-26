@@ -17,14 +17,18 @@
       .navbar-brand {
         font-size: 30px !important;
       }
+      .nav{
+        padding-top:5vh;
+      }
 
       .nav li a {
         font-size: 15px !important;
+        margin-left:15vw !important;
       }
 nav{
   background-color:rgb(0, 17, 53) !important;
 }
-    
+ 
 
       .carousel-item {
         max-height: 50vh;
@@ -534,6 +538,10 @@ option{
       border: 4px solid rgb(0, 17, 53);
       border-radius: 8px;
       background: white;
+    }
+    #checkname
+    {
+      opacity:0;
     }
 
     .btn1 {
@@ -1196,7 +1204,9 @@ justify-content: space-around;   */
     .footer-bottom h2 {
       margin: 0;
     }
-
+#body{
+  display: block;
+}
     /* .loader {
     display:block;
 position:fixed;
@@ -1218,9 +1228,12 @@ position:fixed;
 
 <body>
 
-  <div class=loader></div>
+  <div id=loader style="display:none;">
+    <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif?e44397" alt="">
+  </div>
 
-
+<div id="body">
+  
   <nav class="navbar fixed-top navbar-expand-lg  navbar-light  "style="max-width: 100%">
     <a class="navbar-brand text-light" href="./home" style="margin-left:15vw !important">Car-Eve</a>
     <button class="navbar-toggler bg-white" style="margin-right:15vw" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -1322,7 +1335,10 @@ position:fixed;
 
 
           <button  class="click-me btn1 btn-transparent" >Book Now</button>
-      </form>
+     
+          
+        </form><div id="checkname" class=" form-text text-center text-danger"></div>
+   
     </div>
   
 
@@ -1643,246 +1659,252 @@ position:fixed;
   </div>
   <!-- <div class=section-spacing>
   </div>  </div>-->
-</body>
-<footer>
-  <div class="row footer-top justify-content-around " style="max-width:99vw;">
-    <ul class="col-sm-6 col-md-6 col-lg-4 list1 list-unstyled text-center">
-      <h3 class=text-center>Quick Links</h3>
-      <li><a href=#>Jobs</a></li>
-      <li><a href=#>Brand Assets</a></li>
-      <li><a href=#>Investor Relations</a></li>
-      <li><a href=#>Terms of Service</a></li>
-    </ul>
-    <ul class="col-sm-6 col-md-6 col-lg-4 list2 list-unstyled text-center ">
-      <h3>Get in Touch</h3>
-      <li><a class="text-primary" href=#><i class="text-decoration-none fab fa-2x fa-facebook"></i></a></li>
-      <li><a class="text-primary" href=#> <i class="fab fa-2x fa-twitter"></i></a></li>
-      <li><a href=#><i class="fab fa-2x fa-instagram"></i></a></li>
-      <li><a class="text-danger" href=#><i class="fab fa-2x fa-google-plus-g"></i></a></li>
-    </ul>
-    <div class="col-sm-6 col-md-6 col-lg-4 ">
-      <h3 class="text-center mb-3">Newsletter</h3>
-
-
-      <form  >
-      <div class="row  justify-content-center" >
-        <div class=" col-lg-7 ml-5">
-          <input type="email"  class="form-control" id="newsletter-email" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="checkemail" class="form-text text-center text-danger"></small> 
-        </div>
-      <button type="submit" class="btn btn-transparent col-lg-3 bg-transparent text-danger click-me-2 "style="padding-top:0 !important; max-height:40px !important;"  > <i class="far fa-2x fa-envelope-open"></i></button>
-    </div>
-  </form>
-
+  <footer>
+    <div class="row footer-top justify-content-around " style="max-width:99vw;">
+      <ul class="col-sm-6 col-md-6 col-lg-4 list1 list-unstyled text-center">
+        <h3 class=text-center>Quick Links</h3>
+        <li><a href=#>Jobs</a></li>
+        <li><a href=#>Brand Assets</a></li>
+        <li><a href=#>Investor Relations</a></li>
+        <li><a href=#>Terms of Service</a></li>
+      </ul>
+      <ul class="col-sm-6 col-md-6 col-lg-4 list2 list-unstyled text-center ">
+        <h3>Get in Touch</h3>
+        <li><a class="text-primary" href=#><i class="text-decoration-none fab fa-2x fa-facebook"></i></a></li>
+        <li><a class="text-primary" href=#> <i class="fab fa-2x fa-twitter"></i></a></li>
+        <li><a href=#><i class="fab fa-2x fa-instagram"></i></a></li>
+        <li><a class="text-danger" href=#><i class="fab fa-2x fa-google-plus-g"></i></a></li>
+      </ul>
+      <div class="col-sm-6 col-md-6 col-lg-4 ">
+        <h3 class="text-center mb-3">Newsletter</h3>
   
-      <small id="#" class="form-text text-center">We'll never share your email with anyone else.</small>
-    </div>
-  </div>
-  <div class=footer-bottom>
-    <h4 col-lg-12 style="text-align: center ;margin-bottom:0;">Copyright &copy 2019 CAR-EVERYTHING</h4>
-  </div>
-</footer>
-<!-- //documentation https://github.com/validatorjs/validator.js
-https://cdnjs.cloudflare.com/ajax/libs/validator/11.1.0/validator.js -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-  // var element1=document.querySelectorAll(".services");
-  // var element2=document.querySelector(".each-service-logo");
-  // var sheight=$(element2).height();
-  // console.log(sheight);
-  // console.log("a");
-  // window.addEventListener('load',(event)=>{
-
-
-  // element1.forEach(element=>{
-
-  //   element.style.height=2*sheight;
-  //   console.log("a");
-  // });
-  // });
   
- 
-  $('.click-me-2').click( function async(event) {
-
-// Don't follow the link
-event.preventDefault();
-error=[];
-// Log the clicked element in the console
-var x= document.querySelector('#newsletter-email').value
-// if(!x) {
-//   error.push('please enter email')
-//   inner
-// }
-// <div id="adjad" style="display:none">"Please enter a valid email" </div>
-
-
-// if(error.length ==0)
-// {
-
-// }
- axios.post("/car/api/newsletter",{
-   email:x
-}).then(response=>{
-      console.log(response);
-      $("#checkemail").text(response.data.message);
-      $("#checkemail").animate({opacity:1});
-      // function as(){
-      //   $("#checkemail").animate({opacity:0})
-      // }
-      // setTimeout(as(),4000);
-    })
-
-
- 
+        <form  >
+        <div class="row  justify-content-center" >
+          <div class=" col-lg-7 ml-5">
+            <input type="email"  class="form-control" id="newsletter-email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="checkemail" class="form-text text-center text-danger"></small> 
+          </div>
+        <button type="submit" class="btn btn-transparent col-lg-3 bg-transparent text-danger click-me-2 "style="padding-top:0 !important; max-height:40px !important;"  > <i class="far fa-2x fa-envelope-open"></i></button>
+      </div>
+    </form>
+  
     
-
-});
-
- 
-    $('.click-me').click(function (event) {
-
-// Don't follow the link
-event.preventDefault();
-
-// Log the clicked element in the console
-var x= document.querySelector('#name').value
-var y= document.querySelector('#picklocation').value
-var z= document.querySelector('#tel').value
-var w= document.querySelector('#pickcar').value
-console.log(x + " " +y+ " "+z+ " " +w );
- 
-axios.post("/api/booking",{
-      name: x,
-      location : y,
-      telephone : z,
-      pickcar : w
-})
-    .then(response => {
-      alert(response.data.message)
-    })
-});
-
-
-  function heightset(class1, class2) {
-
-
-    var element1 = document.querySelectorAll(class1);
-    var element2 = document.querySelector(class2);
-    element1.forEach((element) => {
-      $(element).css('height', $(element2).height());
-
-    })
-
-
-
-
-  }
-  function heightset2(class1, class2) {
-
-
-    var element1 = document.querySelectorAll(class1);
-    var element2 = document.querySelector(class2);
-
-    $(element1).css('height', $(element2).height());
-
-
-
-
-
-
-  }
-  // heightset(".crossfade-figure",".hometop");
-  // heightset(".crossfade1-figure",".our-services");
-  heightset2("figure", ".whybest");
-  heightset(".flipper", ".each-service-logo");
-  heightset(".flipcontainer", ".each-service-logo");
-
-  function marginset(class1, class2) {
-
-
-    var element1 = document.querySelectorAll(class1);
-    var element2 = document.querySelector(class2);
-    element1.forEach((element) => {
-      var eleh = $(element2).height();
-      $(element).css('margin-top', (-1.2 * eleh));
-
-
-
-
-    })
-
-
-  }
-  /* ....................................*/
-  function heightchange(class1, class2, class3, class4) {
-    var element4 = document.querySelector(class1);
-    var element3 = document.querySelector(class2);
-    var element1 = document.querySelector(class3);
-    var element2 = document.querySelector(class4);
-    $(element2).css('margin-top', -0.8 * $(element2).height());
-    $(element4).css('max-height', $(element2).height());
-    $(element4).css('min-height', $(element2).height());
-    // $(element4).css('margin-bottom',$(element2).height());
-
-    $(element3).css('margin-top', $(element4).height());
-
-  }
-  heightchange(".form-container", ".our-services", ".carousel-container", ".form-innercontainer");
-
-  /* ....................................*/
-  marginset(".each-service-desc-desc", ".each-service-logo");
-
-  function animate1(elementclass, animation1) {
-    var element3 = document.querySelectorAll(elementclass);
-    var element4 = document.querySelector('.init');
-    window.addEventListener('scroll', function (event) {
-      element3.forEach(element => {
-        var wintop = $(window).scrollTop();
-        var winheight = $(window).height();
-        var winbottom = wintop + winheight;
-
-        const navheight = $(element4).height();
-        var eletop = $(element).offset().top;
-        var eleheight = $(element).height();
-        var elebottom = eletop + eleheight;
-
-        if (eletop > (wintop - eleheight) && elebottom < (winbottom + eleheight)) {
-          element.style.opacity = 1;
-          $(element).addClass(animation1);
-
-
-        }
-        else {
-
-          element.style.opacity = 0;
-
-          $(element).removeClass(animation1);
-
-          //  console.log($(window).width());
-          //   console.log("no");
-        }
-
+        <small id="#" class="form-text text-center">We'll never share your email with anyone else.</small>
+      </div>
+    </div>
+    <div class=footer-bottom>
+      <h4 col-lg-12 style="text-align: center ;margin-bottom:0;">Copyright &copy 2019 CAR-EVERYTHING</h4>
+    </div>
+  </footer>
+</div>
+  <!-- //documentation https://github.com/validatorjs/validator.js
+  https://cdnjs.cloudflare.com/ajax/libs/validator/11.1.0/validator.js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    // var element1=document.querySelectorAll(".services");
+    // var element2=document.querySelector(".each-service-logo");
+    // var sheight=$(element2).height();
+    // console.log(sheight);
+    // console.log("a");
+    // window.addEventListener('load',(event)=>{
+  
+  
+    // element1.forEach(element=>{
+  
+    //   element.style.height=2*sheight;
+    //   console.log("a");
+    // });
+    // });
+    
+    $('.click-me-2').click( function async(event) {
+  
+  // Don't follow the link
+  event.preventDefault();
+  error=[];
+  // Log the clicked element in the console
+  var x= document.querySelector('#newsletter-email').value
+  // if(!x) {
+  //   error.push('please enter email')
+  //   inner
+  // }
+  // <div id="adjad" style="display:none">"Please enter a valid email" </div>
+  
+  
+  // if(error.length ==0)
+  // {
+  
+  // }
+   axios.post("/car/api/newsletter",{
+     email:x
+  }).then(response=>{
+        console.log(response);
+        $("#checkemail").text(response.data.message);
+        $("#checkemail").animate({opacity:1});
+        
+        setTimeout(function(){ $("#checkemail").animate({opacity:0}) }, 1000);
+        $("#checkemail").css("display",'hidden');
       })
-    });
+  
+  });
+  
+   
+      $('.click-me').click(function (event) {
+  
+  // Don't follow the link
+  event.preventDefault();
+  
+  // Log the clicked element in the console
+  var x= document.querySelector('#name').value
+  var y= document.querySelector('#picklocation').value
+  var z= document.querySelector('#tel').value
+  var w= document.querySelector('#pickcar').value
+  console.log(x + " " +y+ " "+z+ " " +w );
+   
+  axios.post("/car/api/booking",{
+        name: x,
+        location : y,
+        telephone : z,
+        pickcar : w
+  })
+      .then(response => {
+        console.log(response);
+        $("#checkname").text(response.data.message);
+        $("#checkname").animate({opacity:1});
+        
+        setTimeout(function(){ $("#checkname").animate({opacity:0}) }, 1000);
+        $("#checkname").css("display",'hidden');
+     
+  
+      })
+  });
+  
+  
+    function heightset(class1, class2) {
+  
+  
+      var element1 = document.querySelectorAll(class1);
+      var element2 = document.querySelector(class2);
+      element1.forEach((element) => {
+        $(element).css('height', $(element2).height());
+  
+      })
+  
+  
+  
+  
+    }
+    function heightset2(class1, class2) {
+  
+  
+      var element1 = document.querySelectorAll(class1);
+      var element2 = document.querySelector(class2);
+  
+      $(element1).css('height', $(element2).height());
+  
+  
+  
+  
+  
+  
+    }
+    // heightset(".crossfade-figure",".hometop");
+    // heightset(".crossfade1-figure",".our-services");
+    heightset2("figure", ".whybest");
+    heightset(".flipper", ".each-service-logo");
+    heightset(".flipcontainer", ".each-service-logo");
+  
+    function marginset(class1, class2) {
+  
+  
+      var element1 = document.querySelectorAll(class1);
+      var element2 = document.querySelector(class2);
+      element1.forEach((element) => {
+        var eleh = $(element2).height();
+        $(element).css('margin-top', (-1.2 * eleh));
+  
+  
+  
+  
+      })
+  
+  
+    }
+    /* ....................................*/
+    function heightchange(class1, class2, class3, class4) {
+      var element4 = document.querySelector(class1);
+      var element3 = document.querySelector(class2);
+      var element1 = document.querySelector(class3);
+      var element2 = document.querySelector(class4);
+      $(element2).css('margin-top', -0.8 * $(element2).height());
+      $(element4).css('max-height', $(element2).height());
+      $(element4).css('min-height', $(element2).height());
+      // $(element4).css('margin-bottom',$(element2).height());
+  
+      $(element3).css('margin-top', $(element4).height());
+  
+    }
+    heightchange(".form-container", ".our-services", ".carousel-container", ".form-innercontainer");
+  
+    /* ....................................*/
+    marginset(".each-service-desc-desc", ".each-service-logo");
+  
+    function animate1(elementclass, animation1) {
+      var element3 = document.querySelectorAll(elementclass);
+      var element4 = document.querySelector('.init');
+      window.addEventListener('scroll', function (event) {
+        element3.forEach(element => {
+          var wintop = $(window).scrollTop();
+          var winheight = $(window).height();
+          var winbottom = wintop + winheight;
+  
+          const navheight = $(element4).height();
+          var eletop = $(element).offset().top;
+          var eleheight = $(element).height();
+          var elebottom = eletop + eleheight;
+  
+          if (eletop > (wintop - eleheight) && elebottom < (winbottom + eleheight)) {
+            element.style.opacity = 1;
+            $(element).addClass(animation1);
+  
+  
+          }
+          else {
+  
+            element.style.opacity = 0;
+  
+            $(element).removeClass(animation1);
+  
+            //  console.log($(window).width());
+            //   console.log("no");
+          }
+  
+        })
+      });
+     
+  
+    }
     // $(document).ready(function(){
-    //   var element1= document.querySelector(".loader");
-    //   $(element1).css('display','none');
-    //   var element2= document.querySelector(".rest");
-    //  $(element2).css('display','block');
-
-  }
-</script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<!-- Latest compiled JavaScript -->
-
+    //  setTimeout(function(){
+    //   document.getElementById('loader').style.display = 'none';
+    //    document.getElementById('body').style.display = 'block';
+       
+    //  },3000);
+    //  })
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- Latest compiled JavaScript -->
+  
+  
+</body>
 
 
 </html>

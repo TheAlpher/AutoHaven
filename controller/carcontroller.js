@@ -2,8 +2,47 @@
 const Carmodel=require("../model/carmodel.js");
 const teammodel=require("../model/teammodel.js");
 const news=require("../model/newsletter");
+const Booking=require("../model/booking");
 const fs=require('fs');
 const validator=require('validator');
+module.exports.addnewbooking= async(req,res)=>{
+  var val1=req.body.name.split(" ").join('');
+  var val2=req.body.telephone;
+  var x=(validator.isAlpha(val1)&&validator.isNumeric(val2));
+  if(req.body.picklocation=="Pick Location"||req.body.pickcar=="Choose Car")
+  {
+    res.json({
+      message:"All fields are compulsory"
+    })
+  }
+  else{
+  if(x){  
+    book= {
+    name:req.body.name, 
+    picklocation: req.body.location,
+    telephone:req.body.telephone,
+    pickcar:req.body.pickcar
+}
+console.log(book);
+Booking.create(book)
+.then(book1 => {
+  
+    res.json({
+        message: 'Booking confirmed  for  '+ book1.name +"   " +book1.telephone
+    })
+}).catch(err=> {
+  console.log(err.errmsg);
+  res.json({message:"Booking already registered with this number Use a different number"})
+})
+
+  }
+  else{
+    res.json({
+      message:"Please enter  valid Contact Details"
+    })
+  }
+}
+}
 module.exports.addnewslettersub=async (req,res)=>{
 
            var x=validator.isEmail(req.body.email);
@@ -23,9 +62,9 @@ module.exports.addnewslettersub=async (req,res)=>{
     
 })
 .catch(err => {
- console.log(err);
+ console.log(err.errmsg);
 res.json({
-  message:"Duplicate email entry"
+  message:"Subscription already added for this account"
 })
    
    

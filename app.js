@@ -20,23 +20,23 @@ console.log("Connected to DB");
 app.use(express.json());
 // app.use("/api/activity",express.static("../"))
 
-app.post('/api/booking',(req,res)=>{
-    console.log(req.body)
-    book= {
-        name:req.body.name, 
-        picklocation: req.body.location,
-        telephone:req.body.telephone,
-        pickcar:req.body.pickcar
-    }
-    Booking.create(book)
-    .then(book1 => {
-        res.json({
-            message: 'Booking confirmed  for  '+ book1.name +"   " +book1.telephone
-        })
-    })
+// app.post('/api/booking',(req,res)=>{
+//     console.log(req.body)
+//     book= {
+//         name:req.body.name, 
+//         picklocation: req.body.location,
+//         telephone:req.body.telephone,
+//         pickcar:req.body.pickcar
+//     }
+//     Booking.create(book)
+//     .then(book1 => {
+//         res.json({
+//             message: 'Booking confirmed  for  '+ book1.name +"   " +book1.telephone
+//         })
+//     })
 
 
-})
+// })
 // app.post('/api/newsletter',(req,res)=>{
 //      console.log('abc@@@@@@')
 //     newsletter= {
