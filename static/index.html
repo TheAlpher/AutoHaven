@@ -114,7 +114,7 @@ nav{
     }
 
     .third-slide {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.425), rgba(0, 0, 0, 0.541)), url("../img/home/23.JPG");
+      background-image: linear-gradient(rgba(0, 0, 0, 0.425), rgba(0, 0, 0, 0.541)), url("../img/home/23.jpg");
     }
 
     .carousel-container {
@@ -1335,9 +1335,8 @@ position:fixed;
 
 
           <button  class="click-me btn1 btn-transparent" >Book Now</button>
-     
-          
-        </form><div id="checkname" class=" form-text text-center text-danger"></div>
+               
+        </form><div id="checkname" class=" form-text text-center text-danger">kjgkglh</div>
    
     </div>
   
@@ -1743,13 +1742,12 @@ position:fixed;
         $("#checkemail").text(response.data.message);
         $("#checkemail").animate({opacity:1});
         
-        setTimeout(function(){ $("#checkemail").animate({opacity:0}) }, 1000);
+        setTimeout(function(){ $("#checkemail").animate({opacity:0}) }, 2000);
         $("#checkemail").css("display",'hidden');
       })
   
   });
-  
-   
+ 
       $('.click-me').click(function (event) {
   
   // Don't follow the link
@@ -1761,19 +1759,18 @@ position:fixed;
   var z= document.querySelector('#tel').value
   var w= document.querySelector('#pickcar').value
   console.log(x + " " +y+ " "+z+ " " +w );
-   
   axios.post("/car/api/booking",{
         name: x,
         location : y,
         telephone : z,
         pickcar : w
   })
-      .then(response => {
+        .then(response => {
         console.log(response);
         $("#checkname").text(response.data.message);
         $("#checkname").animate({opacity:1});
         
-        setTimeout(function(){ $("#checkname").animate({opacity:0}) }, 1000);
+        setTimeout(function(){ $("#checkname").animate({opacity:0}) }, 2000);
         $("#checkname").css("display",'hidden');
      
   

@@ -5,10 +5,14 @@ const news=require("../model/newsletter");
 const Booking=require("../model/booking");
 const fs=require('fs');
 const validator=require('validator');
+
+
+
 module.exports.addnewbooking= async(req,res)=>{
   var val1=req.body.name.split(" ").join('');
   var val2=req.body.telephone;
   var x=(validator.isAlpha(val1)&&validator.isNumeric(val2));
+  console.log("req.body.picklocation");
   if(req.body.picklocation=="Pick Location"||req.body.pickcar=="Choose Car")
   {
     res.json({
@@ -26,7 +30,6 @@ module.exports.addnewbooking= async(req,res)=>{
 console.log(book);
 Booking.create(book)
 .then(book1 => {
-  
     res.json({
         message: 'Booking confirmed  for  '+ book1.name +"   " +book1.telephone
     })
@@ -54,7 +57,7 @@ module.exports.addnewslettersub=async (req,res)=>{
 }
   news.create(newsletter)
 .then(nu => {
-    console.log('Hi',nu)
+    console.log(nu)
  res.json({
  message: "Newsletter Subscription added to" + nu.email
  })
