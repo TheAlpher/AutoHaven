@@ -7,7 +7,7 @@ let {addnewbooking,addnewslettersub,gethome,getteam,addteammem,updateteammem,rem
  
 } = require("../controller/carcontroller.js");
 carRouter
-.route(['/','/home'])
+.route(['/','./home'])
 .get(gethome);
 carRouter
 .route('./team')
