@@ -60,7 +60,7 @@ app.use(express.json());
     
    
 
-app.use("/car/",carRouter);
+app.use("/car",carRouter);
 app.use(express.static("public"));
 
 // server
