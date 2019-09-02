@@ -7,7 +7,7 @@ let {addnewbooking,addnewslettersub,gethome,getteam,addteammem,updateteammem,rem
  
 } = require("../controller/carcontroller.js");
 carRouter
-.route(['/','./home'])
+.route(['/','/home'])
 .get(gethome);
 carRouter
 .route('/team')
@@ -16,36 +16,36 @@ carRouter
 // .route('/api/newsletter')
 // .get(getteam);
 carRouter
-.route('./api/booking')
+.route('/api/booking')
 .post(addnewbooking)
 carRouter
-.route('./api/newsletter')
+.route('/api/newsletter')
 .post(addnewslettersub)
 
 carRouter
-.route('./team/add')
+.route('/team/add')
 .post(addteammem);
 carRouter
-.route('./team/:id')
+.route('/team/:id')
 .patch(updateteammem)
 .delete(removeteammem);
 
 carRouter
-.route('./about-us')
+.route('/about-us')
 .get(getaboutus);
 carRouter
-.route('./contact-us')
+.route('/contact-us')
 .get(getcontact);
 carRouter
-.route('./car-catalogue')
+.route('/car-catalogue')
 .get(getallcars);
 carRouter
-.route('./:id')
+.route('/:id')
 .get(getcardetails)
 .patch(updatecar)
 .delete(removecar);
 carRouter
-.route('./add')
+.route('/add')
 .post(addcar);
 
 
