@@ -10,7 +10,7 @@ carRouter
 .route(['/','./home'])
 .get(gethome);
 carRouter
-.route('./team')
+.route('/team')
 .get(getteam);
 // carRouter
 // .route('/api/newsletter')
