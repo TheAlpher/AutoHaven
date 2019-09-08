@@ -40,7 +40,7 @@ carRouter
 .route('/car-catalogue')
 .get(getallcars);
 carRouter
-.route('/:id')
+.route('/car/:id')
 .get(getcardetails)
 .patch(updatecar)
 .delete(removecar);

@@ -217,7 +217,7 @@ else
 {
 carcard1=carcard1.replace(/{%rating%}/g,'<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star unmark"></i><i class="fa fa-star unmark"></i><i class="fa fa-star unmark"></i>');
 } 
-carcard1=carcard1.replace(/{%id%}/g,result[i]["id"]);
+carcard1=carcard1.replace(/{%id%}/g,result[i]["_id"]);
 
 a = a+carcard1;
 
@@ -242,7 +242,7 @@ a = a+carcard1;
     module.exports.getcardetails=(req,res)=>{
         let carinfo2=fs.readFileSync('./templates/cars/each-car-template.html');
         let carinfo=carinfo2+ ' ';
-        let id=req.params["id"];
+        let id=req.params.id;
         Carmodel.findById(id).then((result)=>{
            
            carinfo=carinfo.replace(/{%name%}/g,result["Name"]);
