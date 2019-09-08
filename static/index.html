@@ -1205,17 +1205,18 @@ justify-content: space-around;   */
       margin: 0;
     }
 #body{
-display:none;
+display: none;
 }
-  .loader {
+  #loader {
     display:block;
 position:fixed;
 	left: 0px;
 	top: 0px;
-	width: 100%;
-	height: 100%;
+	width: 100vw !important;
+	height: 100vh !important;
 	z-index: 9999;
-	background: url('http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif?e44397') 50% 50% no-repeat rgb(249,249,249);
+  background-color:rgb(255, 255, 255) !important;
+	/* background: url('http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif?e44397') 50% 50% no-repeat rgb(249,249,249); */
 }
 
 #checkemail{
@@ -1226,8 +1227,8 @@ position:fixed;
 
 <body>
 
-  <div id=loader >
-    <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif?e44397" alt="">
+  <div id=loader>
+    <img src="../gif/spinner2.gif" alt="" style="margin-top:17vh !important; margin-left:35vw !important;" >
   </div>
 
 <div id="body">
@@ -1837,15 +1838,16 @@ function heightchange(class1, class2, class3, class4) {
   var element3 = document.querySelector(class2);
   var element1 = document.querySelector(class3);
   var element2 = document.querySelector(class4);
-  $(element2).css('margin-top', -0.8 * $(element2).height());
   $(element4).css('max-height', $(element2).height());
   $(element4).css('min-height', $(element2).height());
+  $(element2).css('margin-top', -0.3 * $(element2).height());
+
   // $(element4).css('margin-bottom',$(element2).height());
 
-  $(element3).css('margin-top', $(element4).height());
+  $(element3).css('margin-top', 3 *$(element4).height() );
 
 }
-heightchange(".form-container", ".our-services", ".carousel-container", ".form-innercontainer");
+ heightchange(".form-container", ".our-services", ".carousel-container", ".form-innercontainer");
 
 /* ....................................*/
 marginset(".each-service-desc-desc", ".each-service-logo");
@@ -1885,7 +1887,7 @@ function animate1(elementclass, animation1) {
  
 
 }
-     },1000);
+     },2000);
      })
   </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
