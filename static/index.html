@@ -72,6 +72,9 @@ nav{
     .navbar-brand {
       font-size: 5vh;
     }
+    nav li{
+  margin-left:2vw;
+}
 
     .nav li a {
       font-size: 3vh;
@@ -1127,8 +1130,8 @@ justify-content: space-around;   */
       text-align: center;
 
       font-size: 2rem;
-      margin-top: 7vmax;
-      margin-bottom: 7vmax;
+      margin-top: 5vmax;
+      margin-bottom: 5vmax;
     }
 
     .app-promo-info p {
@@ -1182,7 +1185,7 @@ justify-content: space-around;   */
     .mobile-app {
 
       max-width: 40vw;
-      max-height: 80vh !important;
+      max-height: 65vh !important;
 
     }
 
@@ -1228,7 +1231,7 @@ position:fixed;
 <body>
 
   <div id=loader>
-    <img src="../gif/spinner2.gif" alt="" style="margin-top:17vh !important; margin-left:30vw !important;" >
+    <img src="../gif/spinner3.gif" alt="" style="margin-top:25vh !important; margin-left:40vw !important;" >
   </div>
 
 <div id="body">
@@ -1652,7 +1655,7 @@ position:fixed;
           </a></div>
       </div>
     </div>
-    <div class="col-sm-12 col-md-12 col-lg-3  pt-5 pl-5 pb-5 text-center">
+    <div class="col-sm-12 col-md-12 col-lg-3  pt-3 pl-5 pb-3 text-center">
       <img class="mobile-app  justify-self-center " src="../img/home/mobile-app.png"></div>
   </div>
   <!-- <div class=section-spacing>
@@ -1778,7 +1781,7 @@ position:fixed;
   
   
 
-    $(window).ready(function(){
+    $(document).ready(function(){
      setTimeout(function(){
       document.getElementById('loader').style.display = 'none';
        document.getElementById('body').style.display = 'block';
