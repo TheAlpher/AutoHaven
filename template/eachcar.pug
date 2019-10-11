@@ -1,0 +1,185 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title #{car.Name}
+  link(href='https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css' rel='stylesheet')
+  script(src='https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js')
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css')
+  link(rel='stylesheet' href='../css/eachcar.css')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+include nav
+.row.main.justify-content-center.mb-5(style='max-width:99.9vw')
+  .crossfade2
+    figure
+    figure
+    figure
+    figure
+    figure
+  .col-lg-8
+    .car-details-content.ml-5
+      h2.pl-3.ml-1
+        | #{car.Name} 
+        span.price.mt-3.mr-3
+          | Rent: 
+          b #{car.Rent}$/day
+      #carouselExampleFade.carousel.slide.col-lg-12(data-ride='carousel' data-interval='3000')
+        ol.carousel-indicators
+          li.active(data-target='#carouselExampleFade' data-slide-to='0')
+          li(data-target='#carouselExampleFade' data-slide-to='1')
+          li(data-target='#carouselExampleFade' data-slide-to='2')
+        .carousel-inner
+          .carousel-item.active
+            img.carousel-img.h-100.w-100.d-block(src=car.img2 alt='First slide')
+          .carousel-item
+            img.carousel-img.w-100.d-block(src=car.img3 alt='Second slide')
+          .carousel-item
+            img.carousel-img.w-100.d-block(src=car.img4 alt='Third slide')
+        a.carousel-control-prev(href='#carouselExampleFade' role='button' data-slide='prev')
+          //
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        a.carousel-control-next(href='#carouselExampleFade' role='button' data-slide='next')
+          //
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+      .car-details-info
+        h3.mt-3.text-center Additional Info
+        p.px-5.pt-3.text-center(style='color:black')
+          | #{car.Description}
+        .technical-info
+          hr.mt-5.col-lg-12
+          .row
+            h3.mb-5.col-lg-12.text-center Features
+            .col-lg-6
+              .tech-info-table
+                table.table.table-bordered
+                  tbody
+                    tr
+                      th Body-Type
+                      td #{car.Bodytype}
+                    tr
+                      th Year
+                      td #{car.Year}
+                    tr
+                      th 0-60mph
+                      td #{car.Mph060} secs
+                    tr
+                      th Top Speed
+                      td #{car.TopSpeed} kmph
+                    tr
+                      th Transmission
+                      td #{car.Transmission}
+                    tr
+                      th Displacement
+                      td #{car.Displacement}CC
+                    tr
+                      th No. of Airbags
+                      td #{car.Airbags}
+                    tr
+                      th Rating
+                      td #{car.Rating}
+            .col-lg-6
+              .tech-info-list.mt-5.col-lg-12
+                ul
+                  li.d-flex
+                    | ABS :                    
+                    if(car.ABS == true)
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-check
+                    else
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-times
+                  li.d-flex
+                    | Cruise Control :                    
+                    if(car.CruiseControl == true)
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-check
+                    else
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-times                     
+                  li.d-flex
+                    | Climate Control :                    
+                    if(car.ClimateControl == true)
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-check
+                    else
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-times                      
+                  li.d-flex
+                    | Alloy Wheels:                    
+                    if(car.AlloyWheels == true)
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-check
+                    else
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-times                      
+                  li.d-flex
+                    | Paddle Shift :                    
+                    if(car.PaddleShift == true)
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-check
+                    else
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-times                      
+                  li.d-flex
+                    | Steering Mounted Controls :                    
+                    if(car.SteeringMountedControls == true)
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-check
+                    else
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-times                      
+                  li.d-flex
+                    | AWD :
+                    if(car.Ways6AdjustSeats == true)
+                        pre.ml-auto.pt-1.text-right                
+                            i.fas.fa-2x.fa-check
+                    else
+                        pre.ml-auto.pt-1.text-right                
+                            i.fas.fa-2x.fa-times                      
+                  li.d-flex
+                    | Sunroof :                    
+                    if(car.Sunroof == true)
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-check
+                    else
+                        pre.ml-auto.pt-1.text-right
+                            i.fas.fa-2x.fa-times                      
+  .col-lg-4.mt-5
+    .sidebar-content-wrap
+      .single-sidebar
+        h3 For More Informations
+        .sidebar-body.text-center
+          p
+            i.fa.fa-2x.fa-mobile.mr-2
+            |  +8801816 277 243
+          p.pl-4
+            i.far.fa-2x.fa-clock.mr-2
+            |  Mon - Sat 8.00 - 18.00
+      .single-sidebar
+        h3 Connect with Us
+        .sidebar-body
+          .social-icons.text-center
+            a(href='#')
+              i.fab.ml-2.mr-2.fa-2x.fa-facebook
+            a(href='#')
+              i.fab.ml-2.mr-2.fa-2x.fa-twitter
+            a(href='#')
+              i.fab.ml-2.mr-2.fa-2x.fa-instagram
+            a(href='#')
+              i.fab.ml-2.mr-2.fa-2x.fa-linkedin
+            a(href='#')
+              i.fab.ml-2.mr-2.fa-2x.fa-dribbble
+hr
+include footer
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+script(src='https://unpkg.com/axios/dist/axios.min.js')
+script(src='../js/eachcar.js')
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
+script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
+// Latest compiled JavaScript

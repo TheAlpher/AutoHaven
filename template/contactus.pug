@@ -1,0 +1,60 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Contact-Us
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='../css/contactus.css')
+include nav
+.container-fluid.bg
+  .col-lg-12
+    #about.text-center
+      h2 CONTACT US
+      .undersubtitles.d-flex.justify-content-around.py-3.mt-3
+        i.fas.fa-2x.fa-phone(style='color:rgb(228, 215, 34);')
+      pre(style='color:white !important; font-size:1.2rem;')     Home  ->  Contact Us
+.col-lg-12.text-center(style='padding-top:15vh !important; padding-bottom:15vh !important;')
+  iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1750.688986784145!2d77.1181266935534!3d28.648399246626777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3979169ff2183341!2sDuty+Free+Cafe!5e0!3m2!1sen!2sin!4v1565466027583!5m2!1sen!2sin' width='80%' height='500' frameborder='0')
+.col-lg-12.d-flex.justify-content-around
+  .col-lg-4
+    .media
+      .media-left.text-danger
+        i.fas.fa-2x.fa-map-marker-alt
+      .media-body.ml-3
+        h4.media-heading Delhi,India
+        p 56/8, Rajouri Garden
+    .media
+      .media-left.text-primary
+        i.fas.fa-2x.fa-phone
+      .media-body.ml-3
+        h4.media-heading 00 (880) 9865 562
+        p Mon to Fri 9am to 6 pm
+    .media
+      .media-left.text-warning
+        i.fa.fa-2x.fa-envelope(aria-hidden='true')
+      .media-body.ml-3
+        h4.media-heading support@car-eve.com
+        p Send us your query anytime!
+  hr
+  .col-lg-4
+    form(action='/action_page.php')
+      .form-group
+        label(for='name') Full Name:
+        input#name.form-control(type='text')
+      .form-group
+        label(for='email') Email address:
+        input#email.form-control(type='email')
+  .col-lg-4.text-center
+    form(action='/action_page.php')
+      .form-group.justify-content-center.text-center
+        label.col-lg-12.pl-0(for='message')  Message:
+        textarea(name='' id='' cols='40' rows='5' placeholder='  Type Your Message Here')
+      button.btn.btn-default.text-danger.bg-light.mx-auto(type='submit') Submit
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
+script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')

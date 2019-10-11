@@ -1,0 +1,131 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  title OUR TEAM
+  link(rel='stylesheet' href='../../css/teams.css')
+include nav
+.container-fluid.bg
+  .row
+    .col-lg-12
+      #about.text-center
+        h2 OUR TEAM
+        .undersubtitles.d-flex.justify-content-around.py-3.mt-3
+          i.fas.fa-2x.fa-users(aria-hidden='true')
+        pre(style='color:white !important; font-size:1.2rem;') Home  ->  Team
+                    
+.col-lg-12.vision-title.text-center.mt-5
+  h1.text-center  OUR MISSION 
+  .undersubtitles.d-flex.justify-content-around
+    hr.hrleft
+    i.far.fa-2x.fa-lightbulb(aria-hidden='true')
+    hr.hrright
+.row.vision-desc.justify-content-center(style='width:99.9vw')
+  p.col-lg-4.text-center.font-italic
+    | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, laudantium. Similique et architecto ducimus
+    | aspernatur nesciunt molestiae commodi. Fugit est in quos dolorum sapiente corporis autem, delectus nobis
+    | earum iste!
+.col-lg-12.vision-title.text-center.mt-5
+  h1.text-center  OUR VISION 
+  .undersubtitles.d-flex.justify-content-around
+    hr.hrleft
+    i.fa.fa-2x.fa-bolt(aria-hidden='true')
+    hr.hrright
+.row.vision-desc.justify-content-center(style='width:99.9vw')
+  p.col-lg-4.text-center.font-italic
+    | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, laudantium. Similique et architecto ducimus
+    | aspernatur nesciunt molestiae commodi. Fugit est in quos dolorum sapiente corporis autem, delectus nobis
+    | earum iste!
+//
+  <div class="vision-desc col-lg-12">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis consequatur atque quod explicabo recusandae, porro dolorem officia omnis illum repellat quisquam earum laboriosam ullam aut dolorum dolor maxime iste quo!
+  </p>
+  </div>
+.subtitles.col-lg-12.text-center
+  h2 HEAD TEAM 
+  .undersubtitles.d-flex.text-center.justify-content-around
+    hr.hrleft
+    i.fa.fa-2x.fa-users(aria-hidden='true')
+    hr.hrright
+.col-lg-12(class='max-width:99vw')
+  .team-content
+    .row(style='max-width: 99vw')
+      .col-lg-4
+        .team-tab-menu
+          ul#myTab.nav.nav-tabs(role='tablist')            
+            for teammem in teams1
+              li.nav-item.each-mem-container
+                a.nav-link.d-flex.active.team-min(id='tab_item_'+teammem._id data-toggle='tab' href='#team_member_'+teammem._id role='tab' aria-selected='true')
+                  .team-mem-icon
+                    img(src=teammem.imagemin alt='JSOFT')
+                  h5 #{teammem.name}
+            for teammem in teams
+              li.nav-item.each-mem-container
+                a.nav-link.d-flex.team-min(id='tab_item_'+teammem._id data-toggle='tab' href='#team_member_'+teammem._id role='tab' aria-selected='true')
+                  .team-mem-icon
+                    img(src=teammem.imagemin )
+                  h5 #{teammem.name}
+
+      .col-lg-8
+        #myTabContent.tab-content
+            for teammem in teams1
+              .tab-pane.fade.active.show(id='team_member_'+teammem._id role='tabpanel' aria-labelledby='tab_item_'+teammem._id)
+                .row
+                  .col-lg-6.col-md-6
+                    .team-member-pro-pic.text-center
+                      img(src=teammem.imagebig alt='JSOFT')
+                  .col-lg-6.col-md-6.align-self-center
+                    .team-member-info.text-center
+                      h4 #{teammem.name}
+                      h5 #{teammem.position}
+                      span.quote-icon
+                        i.fa.fa-quote-left
+                      p #{teammem.description}
+                      .team-social-icon
+                        a(href='#')
+                          i.fab.fa-facebook
+                        a(href='#')
+                          i.fab.fa-twitter
+                        a(href='#')
+                          i.fab.fa-linkedin
+                        a(href='#')
+                          i.fab.fa-pinterest
+                        a(href='#')
+                          i.fab.fa-dribbble
+            for teammem in teams
+              .tab-pane.fade(id='team_member_'+teammem._id role='tabpanel' aria-labelledby='tab_item_'+teammem._id)
+                .row
+                  .col-lg-6.col-md-6
+                    .team-member-pro-pic.text-center
+                      img(src=teammem.imagebig alt='JSOFT')
+                  .col-lg-6.col-md-6.align-self-center
+                    .team-member-info.text-center
+                      h4 #{teammem.name}
+                      h5 #{teammem.position}
+                      span.quote-icon
+                        i.fa.fa-quote-left
+                      p #{teammem.description}
+                      .team-social-icon
+                        a(href='#')
+                          i.fab.fa-facebook
+                        a(href='#')
+                          i.fab.fa-twitter
+                        a(href='#')
+                          i.fab.fa-linkedin
+                        a(href='#')
+                          i.fab.fa-pinterest
+                        a(href='#')
+                          i.fab.fa-dribbble
+
+include footer
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+script(src='https://unpkg.com/axios/dist/axios.min.js')
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='../../js/teams.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
+script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')

@@ -6,12 +6,19 @@ let carRouter = express.Router();
 let {addnewbooking,addnewslettersub,gethome,getteam,addteammem,updateteammem,removeteammem,getaboutus,getcontact,getallcars,getcardetails,addcar,updatecar,removecar
  
 } = require("../controller/carcontroller.js");
+let {viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCarPage
+ 
+} = require("../controller/viewcontroller.js");
+// carRouter
+// .route(['/','/home'])
+// .get(gethome);
 carRouter
 .route(['/','/home'])
-.get(gethome);
-carRouter
-.route('/team')
-.get(getteam);
+.get(viewHomePage);
+// carRouter.route('/team')
+// .get(getteam);
+carRouter.route('/team')
+.get(viewTeamPage);
 // carRouter
 // .route('/api/newsletter')
 // .get(getteam);
@@ -30,20 +37,27 @@ carRouter
 .patch(updateteammem)
 .delete(removeteammem);
 
+// carRouter
+// .route('/about-us')
+// .get(getaboutus);
 carRouter
 .route('/about-us')
-.get(getaboutus);
+.get(viewAboutPage);
 carRouter
 .route('/contact-us')
-.get(getcontact);
+.get(viewContactPage);
+// carRouter
+// .route('/car-catalogue')
+// .get(getallcars);
 carRouter
 .route('/car-catalogue')
-.get(getallcars);
+.get(viewCarsPage);
 carRouter
 .route('/car/:id')
-.get(getcardetails)
+//.get(getcardetails)
 .patch(updatecar)
-.delete(removecar);
+.delete(removecar)
+.get(viewCarPage);
 carRouter
 .route('/add')
 .post(addcar);

@@ -3,8 +3,8 @@
 // imports
 const mongoose=require("mongoose");
 const express = require("express");
-var Booking = require('./model/booking')
-var news=require('./model/newsletter.js');
+// var Booking = require('./model/booking')
+// var news=require('./model/newsletter.js');
 const carRouter = require("./router/carRouter");
 const app = express();
 // Middle ware
@@ -62,6 +62,9 @@ app.use(express.json());
 
 app.use("/",carRouter);
 app.use(express.static("public"));
+app.set("view engine", "pug");
+// views folder
+app.set("views", "template");
 
 // server
 module.exports = app;
