@@ -185,5 +185,85 @@ $(window).ready(function () {
 
 
     }
-  }, 2000);
+    function animate1cardwrapper(elementclass, animation1) {
+      var element3 = document.querySelectorAll(elementclass);
+      
+      window.addEventListener('scroll', function (event) {
+        element3.forEach(element => {
+          var wintop = $(window).scrollTop();
+          var winheight = $(window).height();
+          var winbottom = wintop + winheight;
+
+     
+          var eletop = $(element).offset().top;
+          var eleheight = $(element).height();
+          var elebottom = eletop + eleheight/3;
+
+          if (eletop > (wintop - eleheight) && elebottom < (winbottom + eleheight)) {
+            element.style.opacity = 1;
+            $(element).addClass(animation1);
+
+
+          }
+          else {
+
+            element.style.opacity = 0;
+
+            $(element).removeClass(animation1);
+
+            //  console.log($(window).width());
+            //   console.log("no");
+          }
+
+        })
+      });
+
+
+    }
+    animate1cardwrapper('.cardwrapper','animated fadeInUp');
+    animate1('.mobile-app','animated fadeInRight');
+    animate1('.app-promo-info','animated fadeInLeft');
+  }, 1000);
+
 })
+
+
+
+function animate1(elementclass,animation1 )
+{
+var element3 = document.querySelectorAll(elementclass);
+var element4 = document.querySelector('nav');
+window.addEventListener('scroll', function(event) {
+  element3.forEach(element => {
+    var wintop     = $(window).scrollTop();
+    var winheight=$(window).height();
+    var winbottom= wintop+winheight;
+    console.log(winbottom);
+    const navheight=$(element4).height();
+    var eletop = $(element).offset().top;
+    var eleheight=$(element).height();
+    var elebottom=eletop + eleheight;
+    console.log(elebottom);
+      if(eletop>(wintop-eleheight) && elebottom<(winbottom+eleheight))
+     { element.style.opacity=1;
+      $(element).addClass(animation1); 
+      
+      
+      //  console.log("yes");
+    }
+     else
+     
+    {  
+   
+      element.style.opacity=0;
+       
+      $(element).removeClass(animation1);
+
+      //  console.log($(window).width());
+      //   console.log("no");
+      }
+
+})
+});
+}
+
