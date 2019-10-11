@@ -3,7 +3,7 @@ let carRouter = express.Router();
 // let obj=require("../controller/plancontroller");
 // let createPlan=obj.createPlan();
 // createPlan();
-let {addnewbooking,addnewslettersub,gethome,getteam,addteammem,updateteammem,removeteammem,getaboutus,getcontact,getallcars,getcardetails,addcar,updatecar,removecar
+let {addnewbooking,addnewslettersub,addenquiryrequest,gethome,getteam,addteammem,updateteammem,removeteammem,getaboutus,getcontact,getallcars,getcardetails,addcar,updatecar,removecar
  
 } = require("../controller/carcontroller.js");
 let {viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCarPage
@@ -28,7 +28,9 @@ carRouter
 carRouter
 .route('/api/newsletter')
 .post(addnewslettersub)
-
+carRouter
+.route('/api/contactenquiry')
+.post(addenquiryrequest)
 carRouter
 .route('/team/add')
 .post(addteammem);

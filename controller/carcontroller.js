@@ -3,10 +3,51 @@ const Carmodel=require("../model/carmodel.js");
 const teammodel=require("../model/teammodel.js");
 const news=require("../model/newsletter");
 const Booking=require("../model/booking");
+const ContactEnq=require("../model/ContactEnq");
 const fs=require('fs');
 const validator=require('validator');
 
+module.exports.addenquiryrequest= async(req,res)=>{
+  var val1=req.body.name.split(" ").join('');
+  var val2=req.body.email;
+  var val3=req.body.message;
+  var x=validator.isAlpha(val1);
+  var y=validator.isEmail(val2);
+  if(val1 ==undefined || val2 == undefined || val3 ==undefined)
+  {
+    res.json({
+      message:"All fields are compulsory"
+    })
+  }
+  else if(x == false || y == false )
+  {
+    res.json({
+      message:"Please enter correct contact details"
+    })
+  }
+  else{
+    
+    enquiry= {
+    name:req.body.name, 
+    message: req.body.message,
+    email:req.body.email
+    
+}
+console.log(enquiry);
+ContactEnq.create(enquiry)
+.then(book1 => {
+    res.json({
+        message: "Enquiry request submitted .. You will be contacted shortly"
+    })
+}).catch(err=> {
+  console.log(err.errmsg);
+  res.json({message:"Enquiry already submitted with this email"})
+})
 
+ 
+  
+}
+}
 
 module.exports.addnewbooking= async(req,res)=>{
   var val1=req.body.name.split(" ").join('');

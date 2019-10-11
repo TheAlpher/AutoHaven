@@ -69,6 +69,11 @@ scroll-behavior: smooth;
     font-size:12vh;
     
 }
+#checkname
+    {
+      opacity:0;
+      margin-bottom:30px;
+    }
   /* .hrleft{
     min-width:4vw;
     margin-left:40vw;
