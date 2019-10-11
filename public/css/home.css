@@ -603,12 +603,12 @@ option{
 
     .crossfade1 figure {
       z-index: -3;
-      animation: imageAnimation 15s linear infinite;
+      animation: imageAnimation 16s linear infinite 0s;
 
       backface-visibility: hidden;
 
       background-size: cover;
-      background-repeat: repeat;
+      
 
 
 
@@ -632,79 +632,78 @@ option{
 
     }
 
-    .crossfade1 figure:nth-child(1) {
-      background-image: url('../img/home/21.jpg');
-    }
-
-    .crossfade1 figure:nth-child(2) {
-
-      animation-delay: 3s;
-
-      background-image: url('../img/home/22.jpg');
-
-    }
-
-
-
-    .crossfade1 figure:nth-child(3) {
-
-      animation-delay: 6s;
-
-      background-image: url('../img/home/23.jpg');
-
-    }
-
-
-
-    .crossfade1 figure:nth-child(4) {
-
-      animation-delay: 9s;
-
-      background-image: url('../img/home/24.jpg');
-
-    }
-
-
-
-    .crossfade1 figure:nth-child(5) {
-
-      animation-delay: 12s;
-
-      background-image: url('../img/home/25.jpg');
-
-    }
-
-
-    @keyframes imageAnimation {
+   .crossfade1  figure:nth-child(1) { 
+ 
+    background-image: linear-gradient(white,rgba(255, 255, 255, 0.76),rgb(255, 255, 255)), url('../img/home/1.jpg'); }
+   
+  .crossfade1  figure:nth-child(2) {
+  
+    animation-delay:4s;
+  
+    background-image:linear-gradient(white, rgba(255, 255, 255, 0.74),rgb(255, 255, 255)), url('../img/home/2.jpg');
+  
+  }
+  
+   
+  
+  .crossfade1  figure:nth-child(3) {
+  
+    animation-delay:8s;
+  
+    background-image:linear-gradient(white,rgba(255, 255, 255, 0.733),rgb(255, 255, 255)), url('../img/home/3.jpg');
+  
+  }
+  
+   
+  
+  .crossfade1  figure:nth-child(4) {
+  
+    animation-delay: 12s;
+  
+    background-image:linear-gradient(white,rgba(255, 255, 255, 0.747),rgb(255, 255, 255)), url('../img/home/4.jpg');
+  
+  }
+  
+   
+  
+  
+  
+  @keyframes
+  
+  imageAnimation {
       0% {
-
-        animation-timing-function: ease-in;
-
-        opacity: 0;
-
-      }
-
-      25% {
-
-        animation-timing-function: ease-out;
-
-        opacity: 1;
-
-      }
-
-      40% {
-
-        opacity: 1
-      }
-
-      80% {
-
-        opacity: 0
-      }
-
-
-
-    }
+   
+   animation-timing-function: ease-in;
+  
+   opacity: 0;
+  
+  }
+  
+  12% {
+  
+   animation-timing-function: ease-out;
+  
+   opacity: 1;
+  
+  }
+  
+   25% {
+  
+   opacity: 1
+  }
+  
+   40% {
+  
+   opacity: 0;
+  
+  }
+  100% {
+  
+  opacity: 0;
+ 
+ }
+  
+} 
 
     /* height:135vh; */
 
@@ -938,7 +937,7 @@ justify-content: space-around;   */
     .crossfade2 figure {
       z-index: -2;
 
-      animation: imageAnimation 15s linear infinite;
+      animation: imageAnimation 12s linear infinite 0s;
 
       backface-visibility: hidden;
 
@@ -1001,13 +1000,7 @@ justify-content: space-around;   */
 
 
 
-    .crossfade2 figure:nth-child(5) {
 
-      animation-delay: 12s;
-
-      background-image: url('../img/home/5.jpg');
-
-    }
 
 
     @keyframes imageAnimation {
@@ -1019,22 +1012,25 @@ justify-content: space-around;   */
 
       }
 
-      25% {
+      12% {
 
         animation-timing-function: ease-out;
 
-        opacity: 0.5;
+        opacity: 1;
 
       }
 
-      40% {
+      25% {
 
         opacity: 1
       }
 
-      80% {
+      40% {
 
-        opacity: 0.1
+        opacity: 0
+      }
+      100%{
+        opacity: 0
       }
 
     }

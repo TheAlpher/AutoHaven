@@ -220,7 +220,7 @@ $(window).ready(function () {
 
 
     }
-    animate1cardwrapper('.cardwrapper','animated fadeIn');
+    animate1cardwrapper('.cardwrapper','animated zoomInUp');
     animate1('.mobile-app','animated fadeInRight');
     animate1('.app-promo-info','animated fadeInLeft');
   }, 1000);
