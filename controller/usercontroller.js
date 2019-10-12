@@ -1,4 +1,4 @@
-const UserModel = require("../model/UserModel");
+const UserModel = require("../model/usermodel");
 //
 
 module.exports.deleteUser = async (req, res) => {
