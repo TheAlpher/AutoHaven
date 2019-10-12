@@ -925,7 +925,7 @@ justify-content: space-around;   */
 } */
     .whybest {
 
-      background: linear-gradient(rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.699));
+      background: linear-gradient(rgb(0, 0, 0),rgba(0, 0, 0, 0.705), rgb(0, 0, 0));
 
     }
 
@@ -938,7 +938,7 @@ justify-content: space-around;   */
     .crossfade2 figure {
       z-index: -2;
 
-      animation: imageAnimation 15s linear infinite;
+      animation: imageAnimation 12s linear infinite;
 
       backface-visibility: hidden;
 
@@ -1001,13 +1001,7 @@ justify-content: space-around;   */
 
 
 
-    .crossfade2 figure:nth-child(5) {
 
-      animation-delay: 12s;
-
-      background-image: url('../img/home/5.jpg');
-
-    }
 
 
     @keyframes imageAnimation {
@@ -1019,24 +1013,28 @@ justify-content: space-around;   */
 
       }
 
-      25% {
+      12% {
 
         animation-timing-function: ease-out;
 
-        opacity: 0.5;
+        opacity: 1;
 
       }
 
-      40% {
+      25% {
 
         opacity: 1
       }
 
-      80% {
+      40% {
 
-        opacity: 0.1
+        opacity: 0
       }
 
+      100% {
+
+        opacity: 0
+      }
     }
 
     .cardwrapper {
