@@ -17,8 +17,9 @@ include nav
 .d-flex.justify-content-center(style=' margin-top:20vh !important; margin-bottom:20vh !important;')
     .col-lg-3
         form.form-login
-            img.mb-4.my-5(src='../../img/home/brand-logo.png' alt='' height='72')
-            h1.h3.mb-3.font-weight-normal Login
+            .d-flex.justify-content-center
+                img(src='../../img/home/logomini.png' alt='' height='130')
+            h3.mt-3.mb-3.font-weight-normal.text-center Login
             label.sr-only(for='inputEmail') Email address
             input#userEmail.form-control.mb-2(type='email' placeholder='Email address' required='' autofocus='')
             label.sr-only(for='inputPassword') Password
