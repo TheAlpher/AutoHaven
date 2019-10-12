@@ -9,7 +9,7 @@ let {viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCa
 } = require("../controller/viewcontroller.js");
 let {
   isloggedIn,protectRoute
-} = require("../controller/authController");
+} = require("../controller/authcontroller.js");
 // carRouter
 // .route(['/','/home'])
 // .get(gethome);
