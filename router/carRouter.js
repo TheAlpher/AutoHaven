@@ -20,7 +20,7 @@ carRouter
 // carRouter.route('/team')
 // .get(getteam);
 carRouter.route('/team')
-.get(isloggedIn,viewTeamPage);
+.get(viewTeamPage);
 // carRouter
 // .route('/api/newsletter')
 // .get(getteam);
@@ -46,26 +46,26 @@ carRouter
 // .get(getaboutus);
 carRouter
 .route('/about-us')
-.get(isloggedIn,viewAboutPage);
+.get(viewAboutPage);
 carRouter
 .route('/signup')
 .get(viewSignupPage);
 carRouter.route("/login").get(viewLoginPage);
 carRouter
 .route('/contact-us')
-.get(isloggedIn,viewContactPage);
+.get(viewContactPage);
 // carRouter
 // .route('/car-catalogue')
 // .get(getallcars);
 carRouter
 .route('/car-catalogue')
-.get(isloggedIn,viewCarsPage);
+.get(viewCarsPage);
 carRouter
 .route('/car/:id')
 //.get(getcardetails)
 .patch(updatecar)
 .delete(removecar)
-.get(isloggedIn,viewCarPage);
+.get(viewCarPage);
 carRouter
 .route('/add')
 .post(addcar);
