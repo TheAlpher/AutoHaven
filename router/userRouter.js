@@ -6,7 +6,7 @@ let {
   deleteUser,
   getUser,
   getAllUser
-} = require("../controller/userController");
+} = require("../controller/usercontroller");
 let {
   loginUser,
   userSignUp,
@@ -16,7 +16,7 @@ let {
   logoutUser,
   updateMyPassword,
   authorizeeasy
-} = require("../controller/authController");
+} = require("../controller/authcontroller");
 // handler
 // routers
 userRouter
