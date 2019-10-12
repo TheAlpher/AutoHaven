@@ -16,11 +16,11 @@ let {
 //carRouter.use(isloggedIn);
 carRouter
 .route(['/','/home'])
-.get(viewHomePage);
+.get(isloggedIn,viewHomePage);
 // carRouter.route('/team')
 // .get(getteam);
 carRouter.route('/team')
-.get(viewTeamPage);
+.get(isloggedIn,viewTeamPage);
 // carRouter
 // .route('/api/newsletter')
 // .get(getteam);
@@ -46,26 +46,26 @@ carRouter
 // .get(getaboutus);
 carRouter
 .route('/about-us')
-.get(viewAboutPage);
+.get(isloggedIn,viewAboutPage);
 carRouter
 .route('/signup')
 .get(viewSignupPage);
 carRouter.route("/login").get(viewLoginPage);
 carRouter
 .route('/contact-us')
-.get(viewContactPage);
+.get(isloggedIn,viewContactPage);
 // carRouter
 // .route('/car-catalogue')
 // .get(getallcars);
 carRouter
 .route('/car-catalogue')
-.get(viewCarsPage);
+.get(isloggedIn,viewCarsPage);
 carRouter
 .route('/car/:id')
 //.get(getcardetails)
 .patch(updatecar)
 .delete(removecar)
-.get(viewCarPage);
+.get(isloggedIn,viewCarPage);
 carRouter
 .route('/add')
 .post(addcar);
