@@ -5,11 +5,18 @@ const Booking=require("../model/booking");
 const fs=require('fs');
 const validator=require('validator');
 module.exports.viewHomePage = (req,res)=>{
+    console.log(res.locals.user);
  res.status(201).render("home.pug");   
 }
 module.exports.viewAboutPage = (req,res)=>{
     res.status(201).render("aboutus.pug");
 }
+module.exports.viewLoginPage = (req, res) => {
+  res.status(201).render("login.pug");
+};
+module.exports.viewSignupPage = (req, res) => {
+  res.status(201).render("signup.pug");
+};
 module.exports.viewContactPage = (req,res)=>{
     res.status(201).render("contactus.pug");
 }

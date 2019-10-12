@@ -1,0 +1,65 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    title SignUp
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
+
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+
+
+    link(rel='stylesheet' href='../css/login.css')
+
+include nav
+.d-flex.justify-content-center.bg(style='  padding-top:15vh; padding-bottom:20vh !important;')
+    .col-lg-4.d-flex.justify-content-center.bg1(style='padding-bottom:10vh; border:1px solid yellow ;border-radius:8px;box-shadow: 5px 5px 5px 5px #888888;')
+        .container.col-lg-9
+            form.form.form-horizontal.form-signup(role='form')
+                .d-flex.justify-content-center
+                    img.mb-4.mt-3(src='../../img/home/brand-logo.png' alt='' height='72')
+                h3.text-center.mb-5 Sign Up
+                .form-group(style="width:auto !important;")
+                    label.col-lg-12.control-label(for='firstName') First Name
+                    .col-lg-12
+                        input#firstName.form-control(type='text' placeholder='First Name' autofocus='')
+                .form-group
+                    label.col-lg-12.control-label(for='lastName') Last Name
+                    .col-lg-12
+                        input#lastName.form-control(type='text' placeholder='Last Name' autofocus='')
+                .form-group
+                    label.col-lg-12.control-label(for='email') Email* 
+                    .col-lg-12
+                        input#email.form-control(type='email' placeholder='Email' name='email')
+                .form-group
+                    label.col-lg-12.control-label(for='password') Password*
+                    .col-lg-12
+                        input#password.form-control(type='password' placeholder='Password')
+                .form-group
+                    label.col-lg-12.control-label(for='confirmPassword') Confirm Password*
+                    .col-lg-12
+                        input#confirmpassword.form-control(type='password' placeholder='confirmPassword')
+                .form-group
+                    label.col-lg-12.control-label(for='address')  Address:
+                    .col-lg-12
+                        textarea.form-control(name='' id='address' cols='30' rows='5' placeholder=' ')
+                .form-group
+                    label.col-lg-12.control-label(for='contact') Contact No. 
+                    .col-lg-12
+                        input#tel.form-control.bg-transparent(type='tel' autocomplete='off' placeholder='Contact No' name='contact')
+                .form-group
+                    .col-lg-12.col-sm-offset-3
+                        span.help-block *Required fields
+                button.btn.btn-warning.btn-block.btn-signup(type='submit') SignUp
+        // /form
+        // ./container
+include footer
+script(src='https://unpkg.com/axios/dist/axios.min.js')
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy' crossorigin='anonymous')
+script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
+script(src="./js/login.js")

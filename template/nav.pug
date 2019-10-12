@@ -17,3 +17,15 @@ nav.navbar.fixed-top.navbar-expand-lg.navbar-light(style='max-width: 100%')
         a.nav-item.nav-link.text-light(href='/contact-us') Contact
       li
         a.nav-item.nav-link.text-light(href='/car-catalogue') Cars
+      if user
+        li
+          a.d-flex(href="/#").img-parent 
+            img(src="/img/team/team-mem-min/team-mem-thumb-1.png" style="border:2px solid; border-radius:50%; height:8vh !important;", alt="", srcset="").img_profile
+            .username #{user.fName} 
+        li
+          a.nav-item.nav-link.text-light(href='#').logout LogOut
+      else
+        li 
+          a.nav-item.nav-link.text-light(href='/signup') SignUp
+        li 
+          a.nav-item.nav-link.text-light(href='/login') Login

@@ -4,21 +4,23 @@ let carRouter = express.Router();
 // let createPlan=obj.createPlan();
 // createPlan();
 let {addnewbooking,addnewslettersub,addenquiryrequest,gethome,getteam,addteammem,updateteammem,removeteammem,getaboutus,getcontact,getallcars,getcardetails,addcar,updatecar,removecar
- 
 } = require("../controller/carcontroller.js");
-let {viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCarPage
- 
+let {viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCarPage,viewLoginPage,viewSignupPage
 } = require("../controller/viewcontroller.js");
+let {
+  isloggedIn,protectRoute
+} = require("../controller/authController");
 // carRouter
 // .route(['/','/home'])
 // .get(gethome);
+// carRouter.use(isloggedIn);
 carRouter
 .route(['/','/home'])
-.get(viewHomePage);
+.get(isloggedIn,viewHomePage);
 // carRouter.route('/team')
 // .get(getteam);
 carRouter.route('/team')
-.get(viewTeamPage);
+.get(isloggedIn,viewTeamPage);
 // carRouter
 // .route('/api/newsletter')
 // .get(getteam);
@@ -44,25 +46,27 @@ carRouter
 // .get(getaboutus);
 carRouter
 .route('/about-us')
-.get(viewAboutPage);
+.get(isloggedIn,viewAboutPage);
+carRouter
+.route('/signup')
+.get(viewSignupPage);
+carRouter.route("/login").get(viewLoginPage);
 carRouter
 .route('/contact-us')
-.get(viewContactPage);
+.get(isloggedIn,viewContactPage);
 // carRouter
 // .route('/car-catalogue')
 // .get(getallcars);
 carRouter
 .route('/car-catalogue')
-.get(viewCarsPage);
+.get(isloggedIn,viewCarsPage);
 carRouter
 .route('/car/:id')
 //.get(getcardetails)
 .patch(updatecar)
 .delete(removecar)
-.get(viewCarPage);
+.get(isloggedIn,viewCarPage);
 carRouter
 .route('/add')
 .post(addcar);
-
-
 module.exports=carRouter;
