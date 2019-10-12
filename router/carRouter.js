@@ -13,7 +13,7 @@ let {
 // carRouter
 // .route(['/','/home'])
 // .get(gethome);
-// carRouter.use(isloggedIn);
+//carRouter.use(isloggedIn);
 carRouter
 .route(['/','/home'])
 .get(viewHomePage);
