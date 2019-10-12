@@ -16,7 +16,7 @@ let {
 // carRouter.use(isloggedIn);
 carRouter
 .route(['/','/home'])
-.get(isloggedIn,viewHomePage);
+.get(viewHomePage);
 // carRouter.route('/team')
 // .get(getteam);
 carRouter.route('/team')
