@@ -8,7 +8,9 @@ let {addnewbooking,addnewslettersub,addenquiryrequest,gethome,getteam,addteammem
 let {viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCarPage,viewLoginPage,viewSignupPage
 } = require("../controller/viewcontroller.js");
 let {
-  isloggedIn,protectRoute
+  isloggedIn,
+  protectRoute,
+  isloggedOut
 } = require("../controller/authcontroller.js");
 // carRouter
 // .route(['/','/home'])
