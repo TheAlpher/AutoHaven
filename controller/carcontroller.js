@@ -72,17 +72,17 @@ console.log(book);
 Booking.create(book)
 .then(book1 => {
     res.json({
-        message: 'Booking confirmed  for  '+ book1.name +"   " +book1.telephone
+        message: 'Booking confirmed  for  '+ book1.name +"   " +book1.telephone,color:"green"
     })
 }).catch(err=> {
   console.log(err.errmsg);
-  res.json({message:"Booking already registered with this number Use a different number"})
+  res.json({message:"Booking already registered with this number Use a different number",color:"red"})
 })
 
   }
   else{
     res.json({
-      message:"Please enter  valid Contact Details"
+      message:"Please enter  valid Contact Details",color:"red"
     })
   }
 }
@@ -100,7 +100,7 @@ module.exports.addnewslettersub=async (req,res)=>{
 .then(nu => {
     console.log(nu)
  res.json({
- message: "Newsletter Subscription added to" + nu.email
+ message: "Newsletter Subscription added to" + nu.email,color:"green"
  })
     
     
@@ -108,7 +108,7 @@ module.exports.addnewslettersub=async (req,res)=>{
 .catch(err => {
  console.log(err.errmsg);
 res.json({
-  message:"Subscription already added for this account"
+  message:"Subscription already added for this account",color:"red"
 })
    
    
@@ -116,7 +116,7 @@ res.json({
 }
 else{
   res.json({
-    message:"Please enter a valid email"
+    message:"Please enter a valid email",color:"red"
   })
 }
 }

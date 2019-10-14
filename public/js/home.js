@@ -37,6 +37,14 @@ $('.click-me-2').click(function async(event) {
   }).then(response => {
     console.log(response);
     $("#checkemail").text(response.data.message);
+    if(response.data.color=="red")
+    {
+     $("#checkemail").css("color","red");
+    }
+    else
+    {
+      $("#checkemail").css("color","green");
+    }
     $("#checkemail").animate({ opacity: 1 });
 
     setTimeout(function () { $("#checkemail").animate({ opacity: 0 }) }, 2000);
@@ -65,8 +73,16 @@ $('.click-me').click(function (event) {
     .then(response => {
       console.log(response);
       $("#checkname").text(response.data.message);
+      if(response.data.color=="red")
+      {
+       $("#checkname").css("color","red");
+      }
+      else
+      {
+        $("#checkname").css("color","green");
+      }
       $("#checkname").animate({ opacity: 1 });
-
+       
       setTimeout(function () { $("#checkname").animate({ opacity: 0 }) }, 2000);
       $("#checkname").css("display", 'hidden');
 
