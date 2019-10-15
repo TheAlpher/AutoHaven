@@ -3,6 +3,7 @@ const jsonwebtoken = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const secret = "super secret";
+const validator=require("validator");
 // const sendEmail = require("../utility/email");
 // const Email = require("../utility/email");
 // AuThenticate=>
@@ -14,6 +15,10 @@ module.exports.loginUser = async (req, res) => {
     if (!email || !password) {
       res.end("email or password is not present");
       return;
+    }
+    else if(!validator.isEmail(email)||password.length<8) 
+    {
+      res.end("Incorrect email or password");
     }
 
     // 2.a find user
@@ -69,14 +74,27 @@ module.exports.userSignUp = async (req, res) => {
   //  form submisson
   try {
     let data = req.body;
+    console.log( req.body);
     // value longer syntax
     // let email = data.email;
     // let password = data.password;
     // value shorter destructuring
-    let { email, password } = data;
-    if (!email || !password) {
-      res.end("email or password is not present");
+    let { email, password , fName, lName, confirmPassword,address,contact} = data;
+   let val1 = password.length>=8;
+   let val2= contact.length==10;
+    if (!email || !password || !fName || !lName|| !confirmPassword || !address || !contact) {
+      res.json({status:"All fields are compulsory"});
       return;
+    }
+    else if(password != confirmPassword  || !val1)
+    { console.log("Enter correct password");
+      res.json({status:"Enter correct password format"});
+      return;
+    }
+    else if(!validator.isAlpha(fName) ||!validator.isEmail(email)||  !validator.isNumeric(contact) || !validator.isAlpha(lName) || !val2)
+    {
+      res.json({status:"Enter correct details"})
+     return;
     }
     // 2. create  user
     // async
@@ -95,8 +113,8 @@ module.exports.userSignUp = async (req, res) => {
     })
   } catch (err) {
     console.log(err);
-    res.status(501).json({
-      status: "User not signed In"
+    res.json({
+      status: "User already signedup with this email"
     });
   }
   // 4. responed to  user

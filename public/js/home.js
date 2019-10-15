@@ -83,7 +83,7 @@ $('.click-me').click(function (event) {
       }
       $("#checkname").animate({ opacity: 1 });
        
-      setTimeout(function () { $("#checkname").animate({ opacity: 0 }) }, 2000);
+      setTimeout(function () { $("#checkname").animate({ opacity: 0 }) }, 4000);
       $("#checkname").css("display", 'hidden');
 
 

@@ -25,23 +25,23 @@ include nav
                 .form-group(style="width:auto !important;")
                     label.col-lg-12.control-label(for='firstName') First Name
                     .col-lg-12
-                        input#firstName.form-control(type='text' placeholder='First Name' autofocus='')
+                        input#firstName.form-control(type='text' autocomplete='off' placeholder='First Name' autofocus='')
                 .form-group
                     label.col-lg-12.control-label(for='lastName') Last Name
                     .col-lg-12
-                        input#lastName.form-control(type='text' placeholder='Last Name' autofocus='')
+                        input#lastName.form-control(type='text' autocomplete='off' placeholder='Last Name' autofocus='')
                 .form-group
                     label.col-lg-12.control-label(for='email') Email* 
                     .col-lg-12
-                        input#email.form-control(type='email' placeholder='Email' name='email')
+                        input#email.form-control(type='email' autocomplete="off" placeholder='Email' name='email')
                 .form-group
                     label.col-lg-12.control-label(for='password') Password*
                     .col-lg-12
-                        input#password.form-control(type='password' placeholder='Password')
+                        input#password.form-control(type='password' autocomplete="off" placeholder='Min Length 8 characters')
                 .form-group
                     label.col-lg-12.control-label(for='confirmPassword') Confirm Password*
                     .col-lg-12
-                        input#confirmpassword.form-control(type='password' placeholder='confirmPassword')
+                        input#confirmpassword.form-control(type='password' autocomplete="off" placeholder='Min Length 8 characters')
                 .form-group
                     label.col-lg-12.control-label(for='address')  Address:
                     .col-lg-12
@@ -52,7 +52,7 @@ include nav
                         input#tel.form-control.bg-transparent(type='tel' autocomplete='off' placeholder='Contact No' name='contact')
                 .form-group
                     .col-lg-12.col-sm-offset-3
-                        span.help-block *Required fields
+                        span.help-block All fields are compuslory
                 button.btn.btn-warning.btn-block.btn-signup(type='submit') SignUp
         // /form
         // ./container

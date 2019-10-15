@@ -80,7 +80,13 @@ Booking.create(book)
 })
 
   }
-  else{
+  else if(telephone.length<10)
+  {
+    res.json({
+      message:"Please enter  valid Contact Details",color:"red"
+    })
+  }
+  else {
     res.json({
       message:"Please enter  valid Contact Details",color:"red"
     })

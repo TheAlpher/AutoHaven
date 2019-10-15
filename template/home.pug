@@ -64,13 +64,13 @@ head
   .form-container
     .form-innercontainer
       form.form-inline.justify-content-around
-        input#name.form-control.bg-transparent(type='text' width='100%' placeholder='Name' name='Name')
+        input#name.form-control.bg-transparent(type='text' autocomplete="off" width='100%' placeholder='Name' name='Name')
         select#picklocation.form-control.bg-transparent(placeholder='Pick Location')
           option.text-dark.bg-transparent.font-weight-lighter(selected='' disabled='') Pick Location
           option.text-dark.bg-transparent.font-weight-lighter Delhi
           option.text-dark.bg-white.font-weight-lighter Noida
           option.text-dark.bg-white.font-weight-lighter Gurugram
-        input#tel.form-control.bg-transparent(type='tel' placeholder='Contact No' name='contact')
+        input#tel.form-control.bg-transparent(type='tel' autocomplete="off" placeholder='Contact No' name='contact')
         select#pickcar.form-control.bg-transparent(placeholder='Choose Car')
           option.text-dark.bg-white.font-weight-lighter(selected='' disabled='') Choose Car
           option.text-dark.bg-white.font-weight-lighter Mercedes

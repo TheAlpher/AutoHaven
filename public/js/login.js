@@ -65,7 +65,7 @@ const signup = async (fName,lName, email, password, confirmPassword,address,cont
         location.assign("/");
       }, 1000);
     } else {
-      alert(res.data);
+      alert(res.data.status);
     }
   } catch (err) {
     console.log(err);
