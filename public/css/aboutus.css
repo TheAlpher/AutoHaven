@@ -153,7 +153,12 @@ nav li {
 .about-feature-area .row {
     text-align: center;
 }
-
+.aboutuscard {
+    border: 2px solid yellow;
+    margin-top: 5vh !important;
+    margin-bottom: 20vh !important;
+    transition-duration: 0.8s;
+}
 .fa-car {
     color: yellow;
 }
@@ -227,12 +232,7 @@ nav li {
 }
 
 
-.aboutuscard {
-    border: 2px solid yellow;
-    margin-top: 5vh !important;
-    margin-bottom: 20vh !important;
-    transition-duration: 0.8s;
-}
+
 
 /* .testimonial-container{
 background: linear-gradient(white,rgb(65, 198, 207));

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="">
 </head>
 <body>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light"><a class="navbar-brand text-light" href="/home" style="margin-left:7vw !important"><img class="brandlogo" src="../img/home/logobig2.png"></a>
@@ -33,11 +33,11 @@
   <script src="./js/logout.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <div class="d-flex justify-content-center bg" style="  padding-top:15vh; padding-bottom:20vh !important;">
-    <div class="col-lg-4 d-flex justify-content-center bg1" style="padding-bottom:10vh; border:1px solid yellow ;border-radius:8px;box-shadow: 5px 5px 5px 5px #888888;">
+    <div class="col-lg-6 d-flex justify-content-center bg1" style="padding-bottom:10vh; border:1px solid rgb(0, 153, 255) ;border-radius:8px;box-shadow: 5px 5px 5px 5px #888888;">
       <div class="container col-lg-9">
         <form class="form form-horizontal form-signup" role="form">
           <div class="d-flex justify-content-center"><img class="mt-2" src="../../img/home/logomini.png" alt="" height="100"></div>
-          <h3 class="text-center mb-5">Sign Up</h3>
+          <h3 class="text-center mb-5">Review</h3>
           <div class="form-group" style="width:auto !important;">
             <label class="col-lg-12 control-label" for="firstName">First Name</label>
             <div class="col-lg-12">
@@ -57,21 +57,16 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-12 control-label" for="password">Password*</label>
+            <label class="col-lg-12 control-label" for="JobTitle">Job Title*</label>
             <div class="col-lg-12">
-              <input class="form-control" id="password" type="password" autocomplete="off" placeholder="Min Length 8 characters">
+              <input class="form-control" id="JobTitle" type="text" autocomplete="off" placeholder="Job Title">
             </div>
           </div>
+
           <div class="form-group">
-            <label class="col-lg-12 control-label" for="confirmPassword">Confirm Password*</label>
+            <label class="col-lg-12 control-label" for="reviewbody"> Review:</label>
             <div class="col-lg-12">
-              <input class="form-control" id="confirmpassword" type="password" autocomplete="off" placeholder="Min Length 8 characters">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-12 control-label" for="address"> Address:</label>
-            <div class="col-lg-12">
-              <textarea class="form-control" name="" id="address" cols="30" rows="5" placeholder=" "></textarea>
+              <textarea class="form-control" name="" id="reviewbody" cols="30" rows="10" placeholder="Add your Review Here "></textarea>
             </div>
           </div>
           <div class="form-group">
@@ -83,7 +78,7 @@
           <div class="form-group">
             <div class="col-lg-12 col-sm-offset-3"><span class="help-block">All fields are compuslory</span></div>
           </div>
-          <button class="btn btn-warning btn-block btn-signup" type="submit">SignUp</button>
+          <button class="btn btn-outline-primary btn-block btn-signup" type="submit">Submit Review</button>
         </form>
       </div>
       <!-- /form-->

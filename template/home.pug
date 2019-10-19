@@ -8,245 +8,328 @@ head
   title Home
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
   link(rel='stylesheet' href='../css/home.css')
-#loader
-  img(src='../gif/spinner3.gif' alt='' style='margin-top:25vh !important; margin-left:40vw !important;')
-#body
-  include nav
-  .carousel-container
-    .col-lg-12
-    #carouselExampleIndicators.carousel.slide.up(data-ride='carousel' data-interval='1000000')
-      //
-        <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-      .carousel-inner
-        .carousel-item.active
-          .each-slide.first-slide.bg-primary.d-block.pt-5.mx-auto
-            h1.col-lg-6.font-weight-bold BOOK A CAR TODAY !
-            p.col-lg-8
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti inventore temporibus
-              | ipsam praesentium expedita. Exercitationem?
-          //
-            <div class="carousel-caption d-none d-block">
-            <h1>ABCD</h1>
-            <p>abc</p>
-            </div>
-        .carousel-item
-          .each-slide.second-slide.bg-primary.d-block.pt-5.mx-auto
-            h1.col-lg-6.font-weight-bold SAVE YOUR MONEY !
-            p.col-lg-8
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti inventore temporibus
-              | ipsam praesentium expedita. Exercitationem?
-          //
-            <div class="carousel-caption d-none d-block">
-            <h1>ABCD</h1>
-            <p>abc</p>
-            </div>
-        .carousel-item
-          .each-slide.third-slide.bg-primary.d-block.pt-5.mx-auto
-            h1.col-lg-6.font-weight-bold ENJOY YOUR JOURNEY !
-            p.col-lg-8
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti inventore temporibus
-              | ipsam praesentium expedita. Exercitationem?
-          //
-            <div class="carousel-caption d-none d-block">
-            <h1>ABCD</h1>
-            <p>abc</p>
-            </div>
-      a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-        // <span class="carousel-control-prev-icon" display="none" aria-hidden="true"></span>
-        span.sr-only Previous
-      a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-        // <span class="carousel-control-next-icon" display="none" aria-hidden="true"></span>
-        span.sr-only Next
-  .form-container
-    .form-innercontainer
-      form.form-inline.justify-content-around
-        input#name.form-control.bg-transparent(type='text' autocomplete="off" width='100%' placeholder='Name' name='Name')
-        select#picklocation.form-control.bg-transparent(placeholder='Pick Location')
-          option.text-dark.bg-transparent.font-weight-lighter(selected='' disabled='') Pick Location
-          option.text-dark.bg-transparent.font-weight-lighter Delhi
-          option.text-dark.bg-white.font-weight-lighter Noida
-          option.text-dark.bg-white.font-weight-lighter Gurugram
-        input#tel.form-control.bg-transparent(type='tel' autocomplete="off" placeholder='Contact No' name='contact')
-        select#pickcar.form-control.bg-transparent(placeholder='Choose Car')
-          option.text-dark.bg-white.font-weight-lighter(selected='' disabled='') Choose Car
-          option.text-dark.bg-white.font-weight-lighter Mercedes
-          option.text-dark.bg-white.font-weight-lighter Audi
-          option.text-dark.bg-white.font-weight-lighter BMW
-          option.text-dark.bg-white.font-weight-lighter Anston Martin
-          option.text-dark.bg-white.font-weight-lighter Jaguar
-          option.text-dark.bg-white.font-weight-lighter Bentley
-          option.text-dark.bg-white.font-weight-lighter Rolls Royce
-          option.text-dark.bg-white.font-weight-lighter Lamborghini
-          option.text-dark.bg-white.font-weight-lighter Ferrari                   
-        button.click-me.btn1.btn-transparent Book Now
-      #checkname.form-text.text-center kjgkglh
-  .our-services
-    .subtitles.text-center(style='padding-bottom:0 !important;')
-      h2.text-muted OUR SERVICES 
-      .undersubtitles.d-flex.justify-content-center(style='margin-bottom:0 !important;')
-        hr.hrleft
-        i.fa.fa-2x.fa-car(aria-hidden='true')
-        hr.hrright
-    .row.service.d-flex.justify-content-around(style='max-width:99% !important')
-      .col-lg-3.col-md-6.col-sm-10.services.justify-content-center
-        .col-lg-12.col-md-12.col-sm-12.each-service
-          .col-lg-12.col-md-12.col-sm-12.flipcontainer
-            .flipper
-              .col-lg-12.col-md-12.col-sm-12.each-service-logo
-                .col-lg-12.col-md-12.col-sm-12.logo.mx-auto.text-center.mx-auto.pt-20.pb-6
-                  i.fas.fa-9x.fa-car-crash
-                  h3
-                    | CAR INSURANCE
-              .col-lg-12.col-md-12.col-sm-12.each-service-desc-desc.text-center
-                p
-                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, unde?
-        .col-lg-12.col-md-12.col-sm-12.each-service
-          .col-lg-12.col-md-12.col-sm-12.flipcontainer
-            .flipper
-              .col-lg-12.col-md-12.col-sm-12.each-service-logo
-                .col-lg-12.col-md-12.col-sm-12.logo.text-center.mx-auto
-                  i.fas.fa-9x.fa-cog
-                  h3 CAR REPAIR
-              .each-service-desc-desc.col-lg-12.col-md-12.col-sm-12.text-center
-                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, sunt!
-      .col-lg-3.col-md-6.col-sm-10.services.justify-content-center
-        .col-lg-12.col-md-12.col-sm-12.each-service
-          .col-lg-12.col-md-12.col-sm-12.flipcontainer
-            .flipper
-              .col-lg-12.col-md-12.col-sm-12.each-service-logo
-                .col-lg-12.col-md-12.col-sm-12.logo.text-center.mx-auto
-                  i.fas.fa-9x.fa-bath
-                  h3
-                    | CAR WASH
-              .col-lg-12.col-md-12.col-sm-12.each-service-desc-desc.text-center
-                p
-                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, unde?
-        .col-lg-12.col-md-12.col-sm-12.each-service
-          .col-lg-12.col-md-12.col-sm-12.flipcontainer(ontouchstart="this.classList.toggle('hover')")
-            .flipper
-              .col-lg-12.col-md-12.col-sm-12.each-service-logo
-                .col-lg-12.col-md-12.col-sm-12.logo.text-center.mx-auto
-                  i.fas.fa-9x.fa-taxi
-                  h3 TAXI SERVICE
-              .each-service-desc-desc.col-lg-12.col-md-12.col-sm-12.text-center
-                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, voluptatem!
-      .col-lg-3.col-md-6.col-sm-12.services.justify-content-around
-        .col-lg-12.col-md-12.col-sm-12.each-service
-          .flipcontainer.col-lg-12.col-md-12.col-sm-12
-            .flipper
-              .col-lg-12.col-md-12.col-sm-12.each-service-logo
-                .col-lg-12.col-md-12.col-sm-12.logo.text-center.mx-auto
-                  i.fas.fa-9x.fa-car-alt
-                  h3
-                    | CAR RENTAL
-              .col-lg-12.col-md-12.col-sm-12.each-service-desc-desc.text-center
-                p
-                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, unde?
-        .col-lg-12.col-md-12.col-sm-10.each-service
-          .col-lg-12.col-md-12.col-sm-12.flipcontainer(ontouchstart="this.classList.toggle('hover')")
-            .flipper
-              .col-lg-12.col-md-12.col-sm-12.each-service-logo
-                .col-lg-12.col-md-12.col-sm-12.logo.text-center.mx-auto
-                  i.far.fa-9x.fa-clipboard
-                  h3
-                    | CAR INSPECTION
-              .col-lg-12.col-md-12.col-sm-12.each-service-desc-desc.text-center
-                p
-                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, unde?
-  .whybest
-    .crossfade2
-      figure.crossfade2-figure
-      figure.crossfade2-figure
-      figure.crossfade2-figure
-      figure.crossfade2-figure
-      figure.crossfade2-figure
-    .subtitles
-      h2.text-light ONLY QUALITY FOR CLIENTS 
-      .undersubtitles.d-flex.justify-content-center
-        hr.hrleft.bg-light
-        i.fa.fa-2x.fa-star(aria-hidden='true')
-        hr.hrright.bg-light
-    .row.text-center.d-flex.justify-content-around(style='width:99.9% !important')
-      .col-sm-12.col-md-5.col-lg-3.cardwrapper.justify-content-center
-        .card.bg-transparent
-          .card-title.justify-content-center
-            i.far.fa-3x.fa-id-badge
-            h3 Professional Service
-          p
-            | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla esse, voluptatem vitae hic molestiae nisi
-            | doloremque velit. Debitis nihil accusantium dicta perferendis, blanditiis molestias, laudantium atque
-            | asperiores quis at ex!
-        .card.bg-transparent
-          .card-title.justify-content-center
-            i.fas.fa-3x.fa-wrench
-            h3 Expert Mechanics
-          p
-            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos incidunt praesentium officia, earum
-            | animi, quam soluta sapiente, eaque aperiam necessitatibus corporis sed magnam explicabo sunt doloremque
-            | quae. Blanditiis, hic!
-      .col-sm-8.col-md-5.col-lg-3.cardwrapper.justify-content-around
-        .card.bg-transparent
-          .card-title.justify-content-center
-            i.fas.fa-3x.fa-phone-volume
-            h3 Great Support
-          p
-            | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, tempore illo, corporis quia maxime
-            | praesentium commodi magnam voluptate voluptas consectetur doloremque. Reprehenderit fugit atque sit
-            | nesciunt
-            | nihil, eligendi in dolorem.
-        .card.bg-transparent
-          .card-title.justify-content-center
-            i.fas.fa-3x.fa-smile-beam
-            h3 Positive Reviews
-          p
-            | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam nemo deserunt illum placeat possimus
-            | nobis
-            | quisquam esse, ut blanditiis exercitationem? Culpa dicta iure ducimus eligendi. Tempora, ipsam quasi!
-            | Modi,
-            | aliquid.
-      .col-sm-8.col-md-5.col-lg-3.cardwrapper.justify-content-around
-        .card.bg-transparent
-          .card-title.justify-content-center
-            i.fas.fa-3x.fa-project-diagram
-            h3
-              | Largest Network
-          p
-            | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ipsa, aperiam provident sapiente
-            | dolore
-            | doloremque culpa, quae maxime sunt sint cum, voluptatem tempora veniam eius corrupti odio voluptates
-            | commodi! Adipisci!
-        .card.bg-transparent
-          .card-title.justify-content-center
-            i.fas.fa-3x.fa-car
-            h3 Huge Car Fleet
-          p
-            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Et soluta odit deserunt, dolor veniam
-            | consequuntur
-            | vero unde mollitia tempora sapiente modi repellendus nostrum ut incidunt natus nulla, itaque labore
-            | tenetur.
-  .row.app-promo
-    .app-promo-info.text-center.col-md-12.col-sm-12.col-lg-7
-      h3
-        | SAVE 30% 
-        br
-        | WITH THE APP
-      p Easy &amp; Fast .. Book car in 60 seconds
-      .app-promo-info-links.col-sm-12.justify-content-center
-        .store.mr-5
-          a.app-link(href='#')
-            i.fab.fa-2x.fa-android
-            p Android Store
-        .store
-          a.app-link(href='#')
-            i.fab.fa-2x.fa-apple
-            p  Apple Store
-    .col-sm-12.col-md-12.col-lg-3.pt-3.pl-5.pb-3.text-center
-      img.mobile-app.justify-self-center(src='../img/home/mobile-app.png')
-  include footer
+body  
+  #loader
+    img(src='../gif/spinner3.gif' alt='' style='margin-top:25vh !important; margin-left:40vw !important;')
+  #body
+    include nav
+    .carousel-container
+      .col-lg-12
+      #carouselExampleIndicators.carousel.slide.up(data-ride='carousel' data-interval='2000')
+        ol.carousel-indicators
+          li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+          li(data-target='#carouselExampleIndicators' data-slide-to='1')
+          li(data-target='#carouselExampleIndicators' data-slide-to='2')  
+        .carousel-inner
+          .carousel-item.active
+            .each-slide.first-slide.bg-primary.d-block.pt-5.mx-auto
+              h1.col-lg-6.font-weight-bold BOOK A CAR TODAY !
+              .row
+                p.col-lg-8
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti inventore temporibus
+                  | ipsam praesentium expedita. Exercitationem?
+                .col-lg-3.pl-auto
+                  a.btn.btn-warning(type='button' href="./car-catalogue" style='position:absolute; right:5vw; bottom:3vh;   transform: scale(1.5, 1.5);') Book Now 
+            //
+              <div class="carousel-caption d-none d-block">
+              <h1>ABCD</h1>
+              <p>abc</p>
+              </div>
+          .carousel-item
+            .each-slide.second-slide.bg-primary.d-block.pt-5.mx-auto
+              h1.col-lg-6.font-weight-bold SAVE YOUR MONEY !
+              .row  
+                p.col-lg-8
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti inventore temporibus
+                  | ipsam praesentium expedita. Exercitationem?
+                .col-lg-3.pl-auto
+                  a.btn.btn-warning(type='button' href="./car-catalogue" style='position:absolute; right:5vw; bottom:3vh;   transform: scale(1.5, 1.5);') Book Now               
+            //
+              <div class="carousel-caption d-none d-block">
+              <h1>ABCD</h1>
+              <p>abc</p>
+              </div>
+          .carousel-item
+            .each-slide.third-slide.bg-primary.d-block.pt-5.mx-auto
+              h1.col-lg-6.font-weight-bold ENJOY YOUR JOURNEY !
+              .row
+                p.col-lg-8
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti inventore temporibus
+                  | ipsam praesentium expedita. Exercitationem?
+                .col-lg-3.pl-auto
+                  a.btn.btn-warning(type='button' href="./car-catalogue" style='position:absolute; right:5vw; bottom:3vh;   transform: scale(1.5, 1.5);') Book Now          
+            //
+              <div class="carousel-caption d-none d-block">
+              <h1>ABCD</h1>
+              <p>abc</p>
+              </div>
+        //- a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+        //-   // <span class="carousel-control-prev-icon" display="none" aria-hidden="true"></span>
+        //-   span.sr-only Previous
+        //- a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+        //-   // <span class="carousel-control-next-icon" display="none" aria-hidden="true"></span>
+        //-   span.sr-only Next
+    //- .form-container
+    //-   .form-innercontainer
+        
+    //-     if(user)
+    //-       form.form-inline.justify-content-around
+    //-         input#name.form-control.bg-transparent(type='text' autocomplete="off" width='100%' placeholder='Name' name='Name' value=user.fName disabled="true")
+    //-         select#picklocation.form-control.bg-transparent(placeholder='Pick Location')
+    //-           option.text-dark.bg-transparent.font-weight-lighter(selected='' disabled='') Pick Location
+    //-           option.text-dark.bg-transparent.font-weight-lighter Delhi
+    //-           option.text-dark.bg-white.font-weight-lighter Noida
+    //-           option.text-dark.bg-white.font-weight-lighter Gurugram
+    //-         input#tel.form-control.bg-transparent(type='tel' autocomplete="off" placeholder='Contact No' name='contact') 
+    //-         select#pickcar.form-control.bg-transparent(placeholder='Choose Car')
+    //-           option.text-dark.bg-white.font-weight-lighter(selected='' disabled='') Choose Car
+    //-           option.text-dark.bg-white.font-weight-lighter Mercedes
+    //-           option.text-dark.bg-white.font-weight-lighter Audi
+    //-           option.text-dark.bg-white.font-weight-lighter BMW
+    //-           option.text-dark.bg-white.font-weight-lighter Anston Martin
+    //-           option.text-dark.bg-white.font-weight-lighter Jaguar
+    //-           option.text-dark.bg-white.font-weight-lighter Bentley
+    //-           option.text-dark.bg-white.font-weight-lighter Rolls Royce
+    //-           option.text-dark.bg-white.font-weight-lighter Lamborghini
+    //-           option.text-dark.bg-white.font-weight-lighter Ferrari                   
+    //-         button.click-me.btn1.btn-transparent Book Now        
+    //-     else
+    //-       form.form-inline.justify-content-around
+    //-         input#name.form-control.bg-transparent(type='text' autocomplete="off" width='100%' placeholder='Name' name='Name' )
+    //-         select#picklocation.form-control.bg-transparent(placeholder='Pick Location')
+    //-           option.text-dark.bg-transparent.font-weight-lighter(selected='' disabled='') Pick Location
+    //-           option.text-dark.bg-transparent.font-weight-lighter Delhi
+    //-           option.text-dark.bg-white.font-weight-lighter Noida
+    //-           option.text-dark.bg-white.font-weight-lighter Gurugram
+    //-         input#tel.form-control.bg-transparent(type='tel' autocomplete="off" placeholder='Contact No' name='contact') 
+    //-         select#pickcar.form-control.bg-transparent(placeholder='Choose Car')
+    //-           option.text-dark.bg-white.font-weight-lighter(selected='' disabled='') Choose Car
+    //-           option.text-dark.bg-white.font-weight-lighter Mercedes
+    //-           option.text-dark.bg-white.font-weight-lighter Audi
+    //-           option.text-dark.bg-white.font-weight-lighter BMW
+    //-           option.text-dark.bg-white.font-weight-lighter Anston Martin
+    //-           option.text-dark.bg-white.font-weight-lighter Jaguar
+    //-           option.text-dark.bg-white.font-weight-lighter Bentley
+    //-           option.text-dark.bg-white.font-weight-lighter Rolls Royce
+    //-           option.text-dark.bg-white.font-weight-lighter Lamborghini
+    //-           option.text-dark.bg-white.font-weight-lighter Ferrari                   
+    //-         input#date.form-control.bg-transparent(type="date" )
+    //-         button.click-me.btn1.btn-transparent Book Now
+    //-     #checkname.form-text.text-center #{user}
+    //- .our-services
+    //-   .subtitles.text-center(style='padding-bottom:0 !important;')
+    //-     h2.text-muted OUR SERVICES 
+    //-     .undersubtitles.d-flex.justify-content-center(style='margin-bottom:0 !important;')
+    //-       hr.hrleft
+    //-       i.fa.fa-2x.fa-car(aria-hidden='true')
+    //-       hr.hrright
+    //-   .row.service.d-flex.justify-content-around(style='max-width:99% !important')
+    //-     .col-lg-3.col-md-6.col-sm-10.services.justify-content-center
+    //-       .col-lg-12.col-md-12.col-sm-12.each-service
+    //-         .col-lg-12.col-md-12.col-sm-12.flipcontainer
+    //-           .flipper
+    //-             .col-lg-12.col-md-12.col-sm-12.each-service-logo
+    //-               .col-lg-12.col-md-12.col-sm-12.logo.mx-auto.text-center.mx-auto.pt-20.pb-6
+    //-                 i.fas.fa-9x.fa-car-crash
+    //-                 h3
+    //-                   | CAR INSURANCE
+    //-             .col-lg-12.col-md-12.col-sm-12.each-service-desc-desc.text-center
+    //-               p
+    //-                 | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, unde?
+    //-       .col-lg-12.col-md-12.col-sm-12.each-service
+    //-         .col-lg-12.col-md-12.col-sm-12.flipcontainer
+    //-           .flipper
+    //-             .col-lg-12.col-md-12.col-sm-12.each-service-logo
+    //-               .col-lg-12.col-md-12.col-sm-12.logo.text-center.mx-auto
+    //-                 i.fas.fa-9x.fa-cog
+    //-                 h3 CAR REPAIR
+    //-             .each-service-desc-desc.col-lg-12.col-md-12.col-sm-12.text-center
+    //-               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, sunt!
+    //-     .col-lg-3.col-md-6.col-sm-10.services.justify-content-center
+    //-       .col-lg-12.col-md-12.col-sm-12.each-service
+    //-         .col-lg-12.col-md-12.col-sm-12.flipcontainer
+    //-           .flipper
+    //-             .col-lg-12.col-md-12.col-sm-12.each-service-logo
+    //-               .col-lg-12.col-md-12.col-sm-12.logo.text-center.mx-auto
+    //-                 i.fas.fa-9x.fa-bath
+    //-                 h3
+    //-                   | CAR WASH
+    //-             .col-lg-12.col-md-12.col-sm-12.each-service-desc-desc.text-center
+    //-               p
+    //-                 | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, unde?
+    //-       .col-lg-12.col-md-12.col-sm-12.each-service
+    //-         .col-lg-12.col-md-12.col-sm-12.flipcontainer(ontouchstart="this.classList.toggle('hover')")
+    //-           .flipper
+    //-             .col-lg-12.col-md-12.col-sm-12.each-service-logo
+    //-               .col-lg-12.col-md-12.col-sm-12.logo.text-center.mx-auto
+    //-                 i.fas.fa-9x.fa-taxi
+    //-                 h3 TAXI SERVICE
+    //-             .each-service-desc-desc.col-lg-12.col-md-12.col-sm-12.text-center
+    //-               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, voluptatem!
+    //-     .col-lg-3.col-md-6.col-sm-12.services.justify-content-around
+    //-       .col-lg-12.col-md-12.col-sm-12.each-service
+    //-         .flipcontainer.col-lg-12.col-md-12.col-sm-12
+    //-           .flipper
+    //-             .col-lg-12.col-md-12.col-sm-12.each-service-logo
+    //-               .col-lg-12.col-md-12.col-sm-12.logo.text-center.mx-auto
+    //-                 i.fas.fa-9x.fa-car-alt
+    //-                 h3
+    //-                   | CAR RENTAL
+    //-             .col-lg-12.col-md-12.col-sm-12.each-service-desc-desc.text-center
+    //-               p
+    //-                 | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, unde?
+    //-       .col-lg-12.col-md-12.col-sm-10.each-service
+    //-         .col-lg-12.col-md-12.col-sm-12.flipcontainer(ontouchstart="this.classList.toggle('hover')")
+    //-           .flipper
+    //-             .col-lg-12.col-md-12.col-sm-12.each-service-logo
+    //-               .col-lg-12.col-md-12.col-sm-12.logo.text-center.mx-auto
+    //-                 i.far.fa-9x.fa-clipboard
+    //-                 h3
+    //-                   | CAR INSPECTION
+    //-             .col-lg-12.col-md-12.col-sm-12.each-service-desc-desc.text-center
+    //-               p
+    //-                 | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, unde?
+    .row.py-5(style="max-width:99.9vw !important;")
+      .col-lg-6.col-md-12.text-center.pt-5.px-5
+        p.px-5.py-5
+          | Lorem simply dummy is a texted of the printing costed and
+          | typesetting industry. Lorem Ipsum has been the industry&apos;s
+          | standard dummy text ever since the 1500s, when an unknown printer
+          | took a galley of type.
+          | Lorem ipsum dolor sit amet consectetur adipisicing
+          | elit. Dolores at voluptatum consectetur nisi eveniet,
+          | esse odit incidunt amet natus cupiditate
+          | velit nihil, repellendus dolorum ab minima omnis aliquid, earum necessitatibus.
+      .col-lg-6.col-md-12.px-5
+        img(src='../img/about-us/home-2-about.png' width='100%' height='100%' alt='A car was here')
+    .about-feature-area
+      .row.aboutuscards.text-center.justify-content-around.mw-100
+        a.col-lg-3.col-md-8.col-sm-8(href="#whybest")
+          button.aboutuscard#qualityassurance.default-white.bg-white.pt-3.pb-3
+            .about-feature-item
+              i.fa.fa-car.minicar
+              h4 QUALITY ASSURANCE
+              p
+                | Loremed ipsumed is a compnayes odsoyel dolor sit amet, consectetur adipisicing elit.
+                | Nesciunted
+                | all
+                | of.
+          // Single Fretutes End
+          // Single Fretutes Start
+        a.col-lg-3.col-md-8.col-sm-8(href="./car-catalogue")
+          button.aboutuscard#allbrands.default-white.bg-white.pt-3.pb-3
+            .about-feature-item
+              i.fa.fa-car.minicar
+              h4 ALL BRANDS
+              p
+                | Loremed ipsumed is a compnayes odsoyel dolor sit amet, consectetur adipisicing elit.
+                | Nesciunted
+                | all
+                | of.
+          // Single Fretutes End
+          // Single Fretutes Start
+        a.col-lg-3.col-md-8.col-sm-8(href="./team#testimonials")  
+          button.aboutuscard#satisfaction.default-white.bg-white.pt-3.pb-3
+            .about-feature-item
+              i.fa.fa-car.minicar
+              h4 CUSTOMER SATISFACTION
+              p
+                | Loremed ipsumed is a compnayes odsoyel dolor sit amet, consectetur adipisicing elit.
+                | Nesciunted
+                | all
+                | of.
+          // Single Fretutes End
+      // About Fretutes End    
+    .whybest#whybest
+      .crossfade2
+        figure.crossfade2-figure
+        figure.crossfade2-figure
+        figure.crossfade2-figure
+        figure.crossfade2-figure
+        figure.crossfade2-figure
+      .subtitles
+        h2.text-light ONLY QUALITY FOR CLIENTS 
+        .undersubtitles.d-flex.justify-content-center
+          hr.hrleft.bg-light
+          i.fa.fa-2x.fa-star(aria-hidden='true')
+          hr.hrright.bg-light
+      .row.text-center.d-flex.justify-content-around(style='width:99.9% !important')
+        .col-sm-12.col-md-5.col-lg-3.cardwrapper.justify-content-center
+          .card.bg-transparent
+            .card-title.justify-content-center
+              i.far.fa-3x.fa-id-badge
+              h3 Professional Service
+            p
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla esse, voluptatem vitae hic molestiae nisi
+              | doloremque velit. Debitis nihil accusantium dicta perferendis, blanditiis molestias, laudantium atque
+              | asperiores quis at ex!
+          .card.bg-transparent
+            .card-title.justify-content-center
+              i.fas.fa-3x.fa-wrench
+              h3 Expert Mechanics
+            p
+              | Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos incidunt praesentium officia, earum
+              | animi, quam soluta sapiente, eaque aperiam necessitatibus corporis sed magnam explicabo sunt doloremque
+              | quae. Blanditiis, hic!
+        .col-sm-8.col-md-5.col-lg-3.cardwrapper.justify-content-around
+          .card.bg-transparent
+            .card-title.justify-content-center
+              i.fas.fa-3x.fa-phone-volume
+              h3 Great Support
+            p
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, tempore illo, corporis quia maxime
+              | praesentium commodi magnam voluptate voluptas consectetur doloremque. Reprehenderit fugit atque sit
+              | nesciunt
+              | nihil, eligendi in dolorem.
+          .card.bg-transparent
+            .card-title.justify-content-center
+              i.fas.fa-3x.fa-smile-beam
+              h3 Positive Reviews
+            p
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam nemo deserunt illum placeat possimus
+              | nobis
+              | quisquam esse, ut blanditiis exercitationem? Culpa dicta iure ducimus eligendi. Tempora, ipsam quasi!
+              | Modi,
+              | aliquid.
+        .col-sm-8.col-md-5.col-lg-3.cardwrapper.justify-content-around
+          .card.bg-transparent
+            .card-title.justify-content-center
+              i.fas.fa-3x.fa-project-diagram
+              h3
+                | Largest Network
+            p
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ipsa, aperiam provident sapiente
+              | dolore
+              | doloremque culpa, quae maxime sunt sint cum, voluptatem tempora veniam eius corrupti odio voluptates
+              | commodi! Adipisci!
+          .card.bg-transparent
+            .card-title.justify-content-center
+              i.fas.fa-3x.fa-car
+              h3 Huge Car Fleet
+            p
+              | Lorem ipsum dolor sit amet consectetur adipisicing elit. Et soluta odit deserunt, dolor veniam
+              | consequuntur
+              | vero unde mollitia tempora sapiente modi repellendus nostrum ut incidunt natus nulla, itaque labore
+              | tenetur.
+    .row.app-promo
+      .app-promo-info.text-center.col-md-12.col-sm-12.col-lg-7
+        h3
+          | SAVE 30% 
+          br
+          | WITH THE APP
+        p Easy &amp; Fast .. Book car in 60 seconds
+        .app-promo-info-links.col-sm-12.justify-content-center
+          .store.mr-5
+            a.app-link(href='#')
+              i.fab.fa-2x.fa-android
+              p Android Store
+          .store
+            a.app-link(href='#')
+              i.fab.fa-2x.fa-apple
+              p  Apple Store
+      .col-sm-12.col-md-12.col-lg-3.pt-3.pl-5.pb-3.text-center
+        img.mobile-app.justify-self-center(src='../img/home/mobile-app.png')
+    include footer
 
 //documentation https://github.com/validatorjs/validator.js
   https://cdnjs.cloudflare.com/ajax/libs/validator/11.1.0/validator.js
@@ -257,4 +340,4 @@ script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
 script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
 script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
-// Latest compiled JavaScript
+  // Latest compiled JavaScript

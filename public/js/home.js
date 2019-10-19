@@ -13,7 +13,9 @@
 //   console.log("a");
 // });
 // });
+
 console.log("blablabla");
+
 $('.click-me-2').click(function async(event) {
 
   // Don't follow the link
@@ -62,16 +64,19 @@ $('.click-me').click(function (event) {
   var x = document.querySelector('#name').value
   var y = document.querySelector('#picklocation').value
   var z = document.querySelector('#tel').value
+  console.log("contact no"+ z);
   var w = document.querySelector('#pickcar').value
-  console.log(x + " " + y + " " + z + " " + w);
+  var p = document.querySelector('#date').value
+  console.log(x + " " + y + " " + z + " " + w +" "+p);
   axios.post("/api/booking", {
     name: x,
     location: y,
     telephone: z,
-    pickcar: w
+    pickcar: w,
+    date:p
   })
     .then(response => {
-      console.log(response);
+      console.log(response.data.booking);
       $("#checkname").text(response.data.message);
       if(response.data.color=="red")
       {
@@ -93,9 +98,15 @@ $('.click-me').click(function (event) {
 
 
 $(window).ready(function () {
+
+  let username= $('#checkname').text();
+  if(username!=null)
+  $("#name").text.value=username.fName;
+  console.log("Username     " +username);
   setTimeout(function () {
     document.getElementById('loader').style.display = 'none';
     document.getElementById('body').style.display = 'block';
+  
     function heightset(class1, class2) {
 
 
@@ -127,8 +138,8 @@ $(window).ready(function () {
     // heightset(".crossfade-figure",".hometop");
     // heightset(".crossfade1-figure",".our-services");
     heightset2("figure", ".whybest");
-    heightset(".flipper", ".each-service-logo");
-    heightset(".flipcontainer", ".each-service-logo");
+    // heightset(".flipper", ".each-service-logo");
+    // heightset(".flipcontainer", ".each-service-logo");
 
     function marginset(class1, class2) {
 
@@ -161,7 +172,7 @@ $(window).ready(function () {
       $(element3).css('margin-top', 3 * $(element4).height());
 
     }
-    heightchange(".form-container", ".our-services", ".carousel-container", ".form-innercontainer");
+    // heightchange(".form-container", ".our-services", ".carousel-container", ".form-innercontainer");
 
     /* ....................................*/
     marginset(".each-service-desc-desc", ".each-service-logo");

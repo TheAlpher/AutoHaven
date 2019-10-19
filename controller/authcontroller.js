@@ -40,7 +40,7 @@ module.exports.loginUser = async (req, res) => {
     let ans = await bcrypt.compare("" + password, dbPassword);
     if (!ans) {
       // new Error("Password was wrong")
-      res.end("password is wrong");
+      res.end("Incorrect Password");
       return;
     }
     // token is assigned

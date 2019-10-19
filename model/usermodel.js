@@ -58,7 +58,9 @@ const userSchema = new mongoose.Schema({
     min: 8
   },
   contact: {
-    type: Number
+    type: Number,
+    required: true
+
   },
   resetToken: String,
   expiresIn: Date

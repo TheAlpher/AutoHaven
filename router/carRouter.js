@@ -3,9 +3,9 @@ let carRouter = express.Router();
 // let obj=require("../controller/plancontroller");
 // let createPlan=obj.createPlan();
 // createPlan();
-let {addnewbooking,addnewslettersub,addenquiryrequest,gethome,getteam,addteammem,updateteammem,removeteammem,getaboutus,getcontact,getallcars,getcardetails,addcar,updatecar,removecar
+let {addnewbooking,addnewreview,addnewslettersub,addenquiryrequest,gethome,getteam,addteammem,updateteammem,removeteammem,getaboutus,getcontact,getallcars,getcardetails,addcar,updatecar,removecar
 } = require("../controller/carcontroller.js");
-let {viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCarPage,viewLoginPage,viewSignupPage
+let {viewAccountPage,viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCarPage,viewLoginPage,viewForgotPasswordPage,viewSignupPage,viewReviewPage
 } = require("../controller/viewcontroller.js");
 let {
   isloggedIn,
@@ -23,9 +23,14 @@ carRouter
 // .get(getteam);
 carRouter.route('/team')
 .get(isloggedIn,viewTeamPage);
+carRouter.route('/review')
+.get(isloggedIn,viewReviewPage);
 // carRouter
 // .route('/api/newsletter')
 // .get(getteam);
+carRouter
+.route('/api/review')
+.post(addnewreview)
 carRouter
 .route('/api/booking')
 .post(addnewbooking)
@@ -53,6 +58,10 @@ carRouter
 .route('/signup')
 .get(viewSignupPage);
 carRouter.route("/login").get(viewLoginPage);
+carRouter.route('/forgotpassword')
+.get(isloggedIn,viewForgotPasswordPage);
+carRouter.route('/me')
+.get(isloggedIn,viewAccountPage);
 carRouter
 .route('/contact-us')
 .get(isloggedIn,viewContactPage);

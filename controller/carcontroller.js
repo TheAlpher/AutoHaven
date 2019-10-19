@@ -3,6 +3,7 @@ const Carmodel=require("../model/carmodel.js");
 const teammodel=require("../model/teammodel.js");
 const news=require("../model/newsletter");
 const Booking=require("../model/booking");
+const reviewmodel=require('../model/reviewmodel');
 const ContactEnq=require("../model/ContactEnq");
 const fs=require('fs');
 const validator=require('validator');
@@ -48,6 +49,52 @@ ContactEnq.create(enquiry)
   
 }
 }
+module.exports.addnewreview = async (req, res) => {
+  // 1. check emailID and password is present in req.body
+  //  form submisson
+ let val2;
+let val3;
+
+   console.log(req.body);
+   if(req.body.contact)
+    val2 = req.body.contact.length;
+    if(req.body.jobtitle)
+    {
+     val3=req.body.jobtitle.split(" ").join("");
+     console.log(val3);
+    }
+
+   console.log("inside add review");
+    if (!req.body.email || !req.body.reviewbody || !req.body.fName || !req.body.lName|| !req.body.jobtitle ||  !req.body.contact )
+     {
+      res.json({message:"All fields are compulsory",color:"red"});
+  
+    }
+    else if(!validator.isAlpha(req.body.fName) ||!validator.isAlpha(val3) || !validator.isEmail(req.body.email)||  !validator.isNumeric(req.body.contact) || !validator.isAlpha(req.body.lName) || val2!=10)
+    {
+      res.json({message:"Enter correct details",color:"red"})
+    
+    }
+    // 2. create  user
+    // async
+    else{
+      try{
+    let review = await reviewmodel.create(req.body);
+    // console.log( result);
+    // result=JSON.parse(result);
+    // 3. create token using jsonwebtokens
+    // encrypt
+  res.json({message:"Review added",color:"green"});
+
+  }
+  catch(err) {
+    console.log(err);
+    res.json({
+      message: "Review already added for the user",color:"red"
+    });
+  }
+} // 4. responed to  user
+};
 
 module.exports.addnewbooking= async(req,res)=>{
   var val1=req.body.name.split(" ").join('');
@@ -60,32 +107,36 @@ module.exports.addnewbooking= async(req,res)=>{
       message:"All fields are compulsory"
     })
   }
+  else if(req.body.telephone.length!=10)
+  {
+    res.json({
+      message:"Please enter  valid Contact Details",color:"red"
+    })
+  }
   else{
   if(x){  
     book= {
     name:req.body.name, 
     picklocation: req.body.location,
     telephone:req.body.telephone,
-    pickcar:req.body.pickcar
+    pickcar:req.body.pickcar,
+    date:req.body.date
 }
-console.log(book);
+console.log(req.body.telephone.length);
 Booking.create(book)
 .then(book1 => {
     res.json({
+         
+         booking:book1,
         message: 'Booking confirmed  for  '+ book1.name +"   " +book1.telephone,color:"green"
     })
 }).catch(err=> {
-  console.log(err.errmsg);
+  console.log(err);
   res.json({message:"Booking already registered with this number Use a different number",color:"red"})
 })
 
   }
-  else if(telephone.length<10)
-  {
-    res.json({
-      message:"Please enter  valid Contact Details",color:"red"
-    })
-  }
+
   else {
     res.json({
       message:"Please enter  valid Contact Details",color:"red"

@@ -52,6 +52,7 @@ nav{
     }
 
     nav {
+
       background: linear-gradient(to right,rgba(0, 0, 0, 0.507),rgb(0, 17, 53),rgba(0, 0, 0, 0.521));
     }
 
@@ -115,7 +116,7 @@ nav{
     }
 
     .carousel-item img {
-      position: absolute;
+     
 
 
       height: 100% !important;
@@ -1169,4 +1170,31 @@ position:fixed;
 
 #checkemail{
  opacity:0;
+}
+.about-feature-area .row {
+  text-align: center;
+}
+
+.minicar {
+  color: yellow;
+}
+
+.default-yellow {
+  border-radius: 10%;
+  background: yellow;
+}
+
+.features {
+  text-align: center;
+  padding-bottom: 5vh;
+}
+.aboutuscard {
+  border: 2px solid yellow;
+  margin-top: 5vh !important;
+  margin-bottom: 20vh !important;
+  transition-duration: 0.3s;
+}
+.aboutuscard:hover{
+  transform: translate(-0.5vmax, -0.5vmax);
+  box-shadow: 0.5vmax 0.5vmax rgba(0, 0, 0, 0.322);
 }
