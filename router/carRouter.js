@@ -5,7 +5,7 @@ let carRouter = express.Router();
 // createPlan();
 let {addnewbooking,addnewreview,addnewslettersub,addenquiryrequest,gethome,getteam,addteammem,updateteammem,removeteammem,getaboutus,getcontact,getallcars,getcardetails,addcar,updatecar,removecar
 } = require("../controller/carcontroller.js");
-let {viewAccountPage,viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCarPage,viewLoginPage,viewForgotPasswordPage,viewSignupPage,viewReviewPage
+let {viewAccountPage,viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCarPage,viewLoginPage,viewForgotPasswordPage,viewChangePasswordPage,viewSignupPage,viewReviewPage,viewBookingPage
 } = require("../controller/viewcontroller.js");
 let {
   isloggedIn,
@@ -60,6 +60,8 @@ carRouter
 carRouter.route("/login").get(viewLoginPage);
 carRouter.route('/forgotpassword')
 .get(isloggedIn,viewForgotPasswordPage);
+carRouter.route('/changepassword')
+.get(isloggedIn,viewChangePasswordPage);
 carRouter.route('/me')
 .get(isloggedIn,viewAccountPage);
 carRouter
@@ -77,6 +79,9 @@ carRouter
 .patch(updatecar)
 .delete(removecar)
 .get(isloggedIn,viewCarPage);
+carRouter
+.route('/car/book/:id')
+.get(isloggedIn,viewBookingPage);
 carRouter
 .route('/add')
 .post(addcar);

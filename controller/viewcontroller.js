@@ -30,6 +30,9 @@ module.exports.viewAccountPage = async  (req,res)=>{
 module.exports.viewForgotPasswordPage = (req, res) => {
     res.status(201).render("forgotpassword.pug");
   };
+  module.exports.viewChangePasswordPage = (req, res) => {
+    res.status(201).render("changepassword.pug");
+  };
 module.exports.viewSignupPage = (req, res) => {
   res.status(201).render("signup.pug");
 };
@@ -55,4 +58,10 @@ module.exports.viewCarPage= async (req,res)=>{
     let id=req.params.id;
     let car= await Carmodel.findById(id);
     res.status(201).render("eachcar.pug",{car:car});
+}
+    module.exports.viewBookingPage= async (req,res)=>{
+        let id=req.params.id;
+        let user=res.locals.user;
+        let car= await Carmodel.findById(id);
+        res.status(201).render("bookingform.pug",{car:car,user:user});
 }
