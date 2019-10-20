@@ -24,7 +24,8 @@ module.exports.viewLoginPage = (req, res) => {
 };
 module.exports.viewAccountPage = async  (req,res)=>{
     let user=res.locals.user;
-   let bookings=await Booking.find({email:user.email});
+   let bookings=await Booking.find({email:user.email}); 
+   console.log(bookings);
     res.status(201).render("me.pug",{user:user,bookings:bookings});
 }
 module.exports.viewForgotPasswordPage = (req, res) => {
@@ -33,6 +34,13 @@ module.exports.viewForgotPasswordPage = (req, res) => {
   module.exports.viewChangePasswordPage = (req, res) => {
     res.status(201).render("changepassword.pug");
   };
+  module.exports.viewBookingPage= async (req,res)=>
+  {
+          let id=req.params.id;
+          let user=res.locals.user;
+          let car= await Carmodel.findById(id);
+          res.status(201).render("bookingform.pug",{car:car,user:user});
+  }  
 module.exports.viewSignupPage = (req, res) => {
   res.status(201).render("signup.pug");
 };
@@ -59,7 +67,8 @@ module.exports.viewCarPage= async (req,res)=>{
     let car= await Carmodel.findById(id);
     res.status(201).render("eachcar.pug",{car:car});
 }
-    module.exports.viewBookingPage= async (req,res)=>{
+module.exports.viewBookingPage= async (req,res)=>
+{
         let id=req.params.id;
         let user=res.locals.user;
         let car= await Carmodel.findById(id);

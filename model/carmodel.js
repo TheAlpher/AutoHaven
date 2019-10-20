@@ -25,7 +25,7 @@ const carschema = new mongoose.Schema(
         ClimateControl:{type:Boolean,required:true},
         AlloyWheels:{type:Boolean,required:true},
         PaddleShift:{type:Boolean,required:true},
-        SteeringMountedControls:{type:Boolean,required:true},
+        SteeringControls:{type:Boolean,required:true},
         AWD:{type:Boolean,required:true},
         Sunroof:{type:Boolean,required:true}
         

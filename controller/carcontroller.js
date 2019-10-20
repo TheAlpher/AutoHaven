@@ -97,51 +97,33 @@ let val3;
 };
 
 module.exports.addnewbooking= async(req,res)=>{
-  var val1=req.body.name.split(" ").join('');
-  var val2=req.body.telephone;
-  var x=(validator.isAlpha(val1)&&validator.isNumeric(val2));
-  console.log("req.body.picklocation");
-  if(req.body.picklocation=="Pick Location"||req.body.pickcar=="Choose Car")
+
+  console.log("req.body.location");
+  if(req.body.location=="Pick Location"||!req.body.date || !req.body.days)
   {
     res.json({
       message:"All fields are compulsory"
     })
   }
-  else if(req.body.telephone.length!=10)
-  {
-    res.json({
-      message:"Please enter  valid Contact Details",color:"red"
-    })
-  }
   else{
-  if(x){  
-    book= {
-    name:req.body.name, 
-    picklocation: req.body.location,
-    telephone:req.body.telephone,
-    pickcar:req.body.pickcar,
-    date:req.body.date
-}
-console.log(req.body.telephone.length);
-Booking.create(book)
+   
+ 
+
+Booking.create(req.body)
 .then(book1 => {
     res.json({
          
          booking:book1,
-        message: 'Booking confirmed  for  '+ book1.name +"   " +book1.telephone,color:"green"
+        message: 'Booking confirmed  for  '+ book1.fName +"   on date " +book1.date
     })
 }).catch(err=> {
   console.log(err);
-  res.json({message:"Booking already registered with this number Use a different number",color:"red"})
+  res.json({message:"Booking failed",color:"red"})
 })
 
-  }
+  
 
-  else {
-    res.json({
-      message:"Please enter  valid Contact Details",color:"red"
-    })
-  }
+
 }
 }
 module.exports.addnewslettersub=async (req,res)=>{

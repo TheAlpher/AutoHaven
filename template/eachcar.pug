@@ -126,7 +126,7 @@ include nav
                             i.fas.fa-2x.fa-times                      
                   li.d-flex
                     | Steering Controls :                    
-                    if(car.SteeringMountedControls == true)
+                    if(car.SteeringControls == true)
                         pre.ml-auto.pt-1.text-right
                             i.fas.fa-2x.fa-check
                     else
@@ -134,7 +134,7 @@ include nav
                             i.fas.fa-2x.fa-times                      
                   li.d-flex
                     | AWD :
-                    if(car.Ways6AdjustSeats == true)
+                    if(car.AWD == true)
                         pre.ml-auto.pt-1.text-right                
                             i.fas.fa-2x.fa-check
                     else
@@ -176,7 +176,7 @@ include nav
                 i.fab.ml-2.mr-2.fa-2x.fa-dribbble
       hr
       hr      
-      a.mt-5(href="./book/"+car._id style="text-decoration:none;")
+      a.mt-5(href="../book/"+car._id style="text-decoration:none;")
         button.btn.btn-lg.btn-outline-warning.btn-block(type='submit' style="width=100%") Book Now     
   else
     .col-lg-4.mt-5

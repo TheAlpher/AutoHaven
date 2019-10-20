@@ -80,7 +80,7 @@ carRouter
 .delete(removecar)
 .get(isloggedIn,viewCarPage);
 carRouter
-.route('/car/book/:id')
+.route('/book/:id')
 .get(isloggedIn,viewBookingPage);
 carRouter
 .route('/add')
