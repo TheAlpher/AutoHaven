@@ -15,7 +15,7 @@ let {
   resetPassword,
   logoutUser,
   updateMyPassword,
-  authorizeeasy,
+  authorizeeasy
 } = require("../controller/authcontroller");
 // handler
 // routers
@@ -30,7 +30,7 @@ userRouter.route("/signup").post(userSignUp);
 userRouter.route("/logout").get(logoutUser);
 userRouter.route("/forgetPassword").post(forgetPassword);
 userRouter.route("/resetPassword").patch(resetPassword);
-userRouter.route("/updatePassword").patch(updateMyPassword);
+userRouter.route("/updatePassword").patch(protectRoute, updateMyPassword);
 // userRouter.route("/forgetPassword").post(forgetPassword);
 // userRouter.route("/resetPassword/:token").patch(resetPassword);
 // // req.header =>user
@@ -43,6 +43,5 @@ userRouter.route("/updatePassword").patch(updateMyPassword);
 //   // req=>updateUser=>// admin
 //   .patch(protectRoute, authorizeeasy, updateUser)
 //   .delete(protectRoute, authorizeeasy, deleteUser);
-
 
 module.exports = userRouter;

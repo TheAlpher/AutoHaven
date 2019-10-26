@@ -358,10 +358,10 @@ module.exports.updateMyPassword = async (req, res) => {
   }
   //  model user password update
   console.log(user);
-  user.password = req.body.NewPassword;
-  user.confirmPassword = req.body.confirmPassword;
+  user.password = req.body.newpass;
+  user.confirmPassword = req.body.confirmpass;
   // validators
-  UserModel.save(user);
+  await user.save();
   // send tokens
   // const JWTtoken = jsonwebtoken.sign({ id: user._id }, secret, {
   //   expiresIn: "10d"
