@@ -31,6 +31,9 @@ module.exports.viewAccountPage = async  (req,res)=>{
 module.exports.viewForgotPasswordPage = (req, res) => {
     res.status(201).render("forgotpassword.pug");
   };
+module.exports.viewResetPasswordPage = (req, res) => {
+  res.status(201).render("resetpasswordpage.pug");
+};
   module.exports.viewChangePasswordPage = (req, res) => {
     res.status(201).render("changepassword.pug");
   };

@@ -5,7 +5,21 @@ let carRouter = express.Router();
 // createPlan();
 let {addnewbooking,addnewreview,addnewslettersub,addenquiryrequest,gethome,getteam,addteammem,updateteammem,removeteammem,getaboutus,getcontact,getallcars,getcardetails,addcar,updatecar,removecar
 } = require("../controller/carcontroller.js");
-let {viewAccountPage,viewHomePage,viewAboutPage,viewContactPage,viewTeamPage,viewCarsPage,viewCarPage,viewLoginPage,viewForgotPasswordPage,viewChangePasswordPage,viewSignupPage,viewReviewPage,viewBookingPage
+let {
+  viewAccountPage,
+  viewHomePage,
+  viewResetPasswordPage,
+  viewAboutPage,
+  viewContactPage,
+  viewTeamPage,
+  viewCarsPage,
+  viewCarPage,
+  viewLoginPage,
+  viewForgotPasswordPage,
+  viewChangePasswordPage,
+  viewSignupPage,
+  viewReviewPage,
+  viewBookingPage
 } = require("../controller/viewcontroller.js");
 let {
   isloggedIn,
@@ -25,6 +39,7 @@ carRouter.route('/team')
 .get(isloggedIn,viewTeamPage);
 carRouter.route('/review')
 .get(isloggedIn,viewReviewPage);
+carRouter.route("/resetPassword").get(viewResetPasswordPage);
 // carRouter
 // .route('/api/newsletter')
 // .get(getteam);

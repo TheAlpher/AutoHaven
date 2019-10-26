@@ -3,9 +3,9 @@ const jsonwebtoken = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const secret = "super secret";
-const validator=require("validator");
+const validator = require("validator");
 // const sendEmail = require("../utility/email");
-// const Email = require("../utility/email");
+const Email = require("../utility/email");
 // AuThenticate=>
 module.exports.loginUser = async (req, res) => {
   try {
@@ -15,9 +15,7 @@ module.exports.loginUser = async (req, res) => {
     if (!email || !password) {
       res.end("email or password is not present");
       return;
-    }
-    else if(!validator.isEmail(email)||password.length<8) 
-    {
+    } else if (!validator.isEmail(email) || password.length < 8) {
       res.end("Incorrect email or password");
     }
 
@@ -25,7 +23,7 @@ module.exports.loginUser = async (req, res) => {
     let userData = await UserModel.findOne({
       email: email
     });
-    
+
     // console.log(userData);
     if (!userData) {
       res.end("User not found");
@@ -60,7 +58,7 @@ module.exports.loginUser = async (req, res) => {
       status: "user logged in",
       userData
     });
-    console.log("jojoooo")
+    console.log("jojoooo");
   } catch (err) {
     console.log(err);
     res.status(501).json({
@@ -74,27 +72,46 @@ module.exports.userSignUp = async (req, res) => {
   //  form submisson
   try {
     let data = req.body;
-    console.log( req.body);
+    console.log(req.body);
     // value longer syntax
     // let email = data.email;
     // let password = data.password;
     // value shorter destructuring
-    let { email, password , fName, lName, confirmPassword,address,contact} = data;
-   let val1 = password.length>=8;
-   let val2= contact.length==10;
-    if (!email || !password || !fName || !lName|| !confirmPassword || !address || !contact) {
-      res.json({status:"All fields are compulsory"});
+    let {
+      email,
+      password,
+      fName,
+      lName,
+      confirmPassword,
+      address,
+      contact
+    } = data;
+    let val1 = password.length >= 8;
+    let val2 = contact.length == 10;
+    if (
+      !email ||
+      !password ||
+      !fName ||
+      !lName ||
+      !confirmPassword ||
+      !address ||
+      !contact
+    ) {
+      res.json({ status: "All fields are compulsory" });
       return;
-    }
-    else if(password != confirmPassword  || !val1)
-    { console.log("Enter correct password");
-      res.json({status:"Enter correct password format"});
+    } else if (password != confirmPassword || !val1) {
+      console.log("Enter correct password");
+      res.json({ status: "Enter correct password format" });
       return;
-    }
-    else if(!validator.isAlpha(fName) ||!validator.isEmail(email)||  !validator.isNumeric(contact) || !validator.isAlpha(lName) || !val2)
-    {
-      res.json({status:"Enter correct details"})
-     return;
+    } else if (
+      !validator.isAlpha(fName) ||
+      !validator.isEmail(email) ||
+      !validator.isNumeric(contact) ||
+      !validator.isAlpha(lName) ||
+      !val2
+    ) {
+      res.json({ status: "Enter correct details" });
+      return;
     }
     // 2. create  user
     // async
@@ -106,11 +123,12 @@ module.exports.userSignUp = async (req, res) => {
     const JWTtoken = jsonwebtoken.sign({ id: user._id }, secret, {
       expiresIn: "10d"
     });
+    await new Email(user,"localhost:3000").sendWelcome();
     res.cookie("jwt", JWTtoken, { httpOnly: "true" });
     res.status(200).json({
-      status:"user Signedup",
+      status: "user Signedup",
       user
-    })
+    });
   } catch (err) {
     console.log(err);
     res.json({
@@ -136,10 +154,10 @@ module.exports.isloggedIn = async (req, res, next) => {
   try {
     // 1. check token exist's ot not
     let token;
-    console.log("islogged fn")
+    console.log("islogged fn");
     if (req.cookies.jwt) {
       token = req.cookies.jwt;
-          console.log("NISFIFDVFBG islogged fn");      
+      console.log("NISFIFDVFBG islogged fn");
       console.log(token);
       // 2. verify the token
       let decode = jsonwebtoken.verify(token, secret);
@@ -233,43 +251,51 @@ module.exports.authorize = function(...args) {
 };
 module.exports.forgetPassword = async (req, res) => {
   // 1. get emailID from req.body
-  const email = req.body.email;
+  const email = req.body.emailInput;
   if (!email) {
-    req.end("Please enter your email ID");
+    res.end("Please enter your email ID");
   }
-
   // 2. DB findone
   let user = await UserModel.findOne({
     email: email
   });
+  // console.log(user);
   if (!user) {
     res.end("User with given EmailID not found");
   }
   // 3. randomtoken
   // associate
-
+  // console.log(user);
   let token = user.createResetToken();
-
+  token=token.toString();
+  console.log(token +"************");
+  user.resetToken = token;
   await user.save({ validateBeforeSave: false });
 
   // generate
   // 4. send token via email
 
-  let message =
-    "Your reset token is send please send a patch request to reset password route using provided token \n " +
-    token;
+  // let message =
+  //   "Your reset token is send please send a patch request to reset password route using provided token \n " +
+  //   token;
   // console.log("I was here");
   try {
-
     // sendEmail({
     //   recieverId: user.email,
     //   message: message,
     //   subject: "token is only valid for 10 minutes"
     //   // html
-    // });  
-    let url = `http://localhost:3000/resetPassword/${token}`;
-    await new Email(user,url).sendReset();
-
+    // });
+    // let url = `http://localhost:3000/resetPassword/${token}`;
+     let url =
+       req.protocol +
+       "://" +
+       req.get("host") +
+       "/resetPassword?id=" +
+       user.email +
+       "&token=" +
+       token;
+    await new Email(user, url).sendreset();
   } catch (err) {
     console.log(err);
     res.status(501).send(err);
@@ -277,36 +303,52 @@ module.exports.forgetPassword = async (req, res) => {
   res.end("Password reset token has been send to your email ID");
 };
 module.exports.resetPassword = async (req, res) => {
+  let user;
   // 1. get token from the user
-  const token = req.params.token;
+  const token = req.query.token;
+  const email = req.query.id;
+// let url = req.body.url;
+// email=url.split("/")[3].split("?")[1].split("=")[1].split("&")[0];
+console.log(req.body);
+// url = url.split("?")[3];
+// console.log(token);
+  // const encryptedToken = crypto
+  //   .createHash("sha256")
+  //   .update(token)
+  //   .digest("hex");
+  //   console.log(encryptedToken);
   // console.log(token);
-  const encryptedToken = crypto
-    .createHash("sha256")
-    .update(token)
-    .digest("hex");
-  let user = await UserModel.findOne({ resetToken: encryptedToken });
+  try{
+   user = await UserModel.find( {resetToken: token });
+     user=user[0];
+  }
+  catch(e)
+  {console.log(e);}
+  console.log(user);
   if (!user) {
     res.end("User with this reset token is not present");
   }
-  // 2. verify the token
+      // console.log(user.email);
+
+// 2. verify the token
   // console.log(user);
   // process.exit(1);
-  user.password = req.body.password;
-  user.confirmPassword = req.body.confirmPassword;
-  user.resetToken = undefined;
-  user.expiresIn = undefined;
-  user.save();
-  // console.log("I arrived here");
-  // 3. update the password
-  res.end("Password has been reset");
+  if (user) {
+    user.password = req.body.pass;
+    user.confirmPassword = req.body.confirmpass;
+    user.resetToken = undefined;
+    user.expiresIn = undefined;
+    await user.save();
+    // console.log("I arrived here");
+    // 3. update the password
+    res.end("Password has been reset");
+  }
 };
 module.exports.updateMyPassword = async (req, res) => {
   //  currentPassword,NewPassword,confirmPassword
   console.log(req.body);
   const dbPassword = req.headers.user.password;
-  // ui
-  const password = req.body.currentPassword;
-  // db
+  const password = req.body.oldpass;
   const user = req.headers.user;
   let ans = await bcrypt.compare("" + password, dbPassword);
   if (!ans) {
@@ -319,7 +361,7 @@ module.exports.updateMyPassword = async (req, res) => {
   user.password = req.body.NewPassword;
   user.confirmPassword = req.body.confirmPassword;
   // validators
-  user.save();
+  UserModel.save(user);
   // send tokens
   // const JWTtoken = jsonwebtoken.sign({ id: user._id }, secret, {
   //   expiresIn: "10d"

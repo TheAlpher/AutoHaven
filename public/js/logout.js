@@ -1,6 +1,4 @@
 let logoutBtn = document.getElementById("logout");
- console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-
  const logout = async () => {
    try {
      const res = await axios.get("/api/user/logout");
