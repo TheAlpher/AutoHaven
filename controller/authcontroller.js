@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const secret = "super secret";
 const validator = require("validator");
+const nodemailer=require("nodemailer");
 // const sendEmail = require("../utility/email");
 const Email = require("../utility/email");
 // AuThenticate=>
