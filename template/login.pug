@@ -15,8 +15,8 @@ style.
 
 include nav
 .d-flex.justify-content-center(style=' margin-top:20vh !important; margin-bottom:20vh !important;')
-    .col-lg-3
-        form.form-login
+    .col-lg-3.col-sm-6.col-md-6
+        form.form-login(action='/newlogin' method='post')
             .d-flex.justify-content-center
                 img(src='../../img/home/logomini.png' alt='' height='130')
             h3.mt-3.mb-3.font-weight-normal.text-center Login

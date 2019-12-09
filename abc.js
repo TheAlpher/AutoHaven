@@ -1,6 +1,18 @@
-let dat=Date();
-console.log(dat);
-let date1=dat.split(" ");
-console.log(date1);
-let date2=date1[2]+" "+date1[1]+" "+date1[3];
-console.log(date2);
+var cap={
+    name:"asteve",
+agam:function(){
+    console.log(this);
+    function agam1(){
+        console.log(this==global);
+
+    }
+    agam1();
+},
+  alpher:function(){
+        console.log(this);
+    }
+}
+
+var piy=cap.alpher.bind(cap)();
+cap=null;
+piy();8

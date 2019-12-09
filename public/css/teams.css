@@ -5,20 +5,46 @@
     scroll-behavior: smooth;
   }
   @media only screen and (max-width: 991px) {
-    .navbar-brand{
-  font-size:30px !important;
+
+.count-title{
+  font-size:medium !important;
 }
-.nav{
-        padding-top:5vh;
-      }
-.nav li a {
-  font-size:15px !important;
-  margin-left:15vw !important;
+.team-member-pro-pic{
+  margin: 0 !important;
 }
-nav{
-  background-color:rgb(0, 17, 53) !important;
+.team-member-pro-pic img{
+  margin-bottom: 5vh;
+}
+.team-social-icon a{
+  margin-left: 5px !important;
+  margin-right: 5px !important;
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    nav {
       background: linear-gradient(to right,rgba(0, 0, 0, 0.507),rgb(3, 11, 19),rgba(0, 0, 0, 0.521));
     }
@@ -38,7 +64,7 @@ nav li{
       justify-content: flex-end !important;
   } */
  .container-fluid{
-    width: 100%;
+
   }
   .bg { 
     /* The image used */
@@ -128,7 +154,11 @@ nav li{
     padding-top:1vmax;
 padding-bottom:1vmax; 
 }
+.nav-tabs li a {
+
+}
 .team-min{
+  margin-left: 0 !important;
 min-width:25vmax; 
 padding-top:1vmax;
 padding-bottom:1vmax; 
@@ -163,6 +193,10 @@ border:2px solid rgb(187, 199, 26);
     border-radius:8px;
     border:3px solid rgb(228, 215, 34);
   
+}
+.team-social-icon a{
+  margin-left: 5px !important;
+  margin-right: 5px !important;
 }
 .counterMain {
   padding-top: 3vmax;

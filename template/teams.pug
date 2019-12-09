@@ -58,13 +58,13 @@ include nav
         .team-tab-menu
           ul#myTab.nav.nav-tabs(role='tablist')            
             for teammem in teams1
-              li.nav-item.each-mem-container
+              li.nav-item.each-mem-container(style='min-width:100%;')
                 a.nav-link.d-flex.active.team-min(id='tab_item_'+teammem._id data-toggle='tab' href='#team_member_'+teammem._id role='tab' aria-selected='true')
                   .team-mem-icon
                     img(src=teammem.imagemin alt='JSOFT')
                   h5 #{teammem.name}
             for teammem in teams
-              li.nav-item.each-mem-container
+              li.nav-item.each-mem-container(style='min-width:100%;')
                 a.nav-link.d-flex.team-min(id='tab_item_'+teammem._id data-toggle='tab' href='#team_member_'+teammem._id role='tab' aria-selected='true')
                   .team-mem-icon
                     img(src=teammem.imagemin )
@@ -141,13 +141,14 @@ include nav
         i.fas.fa-user-friends.fa-2x
         h2.timer.count-title.count-number(data-to='357' data-speed='3000')
         p.count-text In House Professionals
-.testimonial-container#testimonials.col-lg-12.m-auto.justify-content-center
-  .col-lg-12.vision-title.text-center.mt-5
+.col-lg-12.vision-title.text-center.mt-5
     h1.testimonial-title.text-center  TESTIMONIALS 
     .undersubtitles.d-flex.justify-content-around
       hr.hrleft
       i.far.fa-2x.fa-thumbs-up(aria-hidden='true')
       hr.hrright
+      
+.testimonial-container#testimonials.col-lg-12.m-auto.justify-content-center
   #myCarousel.col-lg-8.carousel.slide(data-ride='carousel' data-interval='1000')
     
     // Carousel indicators
@@ -178,8 +179,8 @@ include nav
       <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
       <i class="fa fa-angle-right"></i>
       </a>
-.row.d-flex.justify-content-center
-  a.btn.btn-outline-warning(type='button' href="./review" style='  transform: scale(1.2, 1.2);') Write a review
+  .row.d-flex.justify-content-center
+    a.btn.btn-outline-warning(type='button' href="./review" style='  transform: scale(1.2, 1.2);') Write a review
 
 include footer
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')

@@ -9,7 +9,7 @@ head
   title Cars
   link(rel='stylesheet' href='../../css/cars.css')
 include nav
-.container-fluid.bg
+.bg
   .row
     .col-lg-12
       #about.text-center
@@ -17,9 +17,9 @@ include nav
         .undersubtitles.d-flex.justify-content-around.py-3.mt-3
           i.fa.fa-2x.fa-car(style='color:rgb(228, 215, 34);' aria-hidden='true')
         pre(style='color:white !important; font-size:1.2rem;')         Home  ->  Cars        
-.row.card-wrapper.mt-5.ml-5.mr-5
+.row.d-flex.justify-content-center.mx-1(style="max-width:97% !important;")
     for car in cars
-        .col-lg-4.text-center.mt-3.mb-3
+        .col-lg-4.col-md-6.col-sm-6.text-center.mt-3.mb-3
             .card.car-card
                 img.card-image.mt-4.ml-5.mr-5(src=car.img1 alt='the image alt text here' height='190rem')
                 .row.justify-content-between.mt-3

@@ -21,6 +21,7 @@ mongoose
     // console.log(conn.connection);
     console.log("Connected to DB");
   });
+app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use("/", carRouter);
 app.use("/api/user",userRouter);
