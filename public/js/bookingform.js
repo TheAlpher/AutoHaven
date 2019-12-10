@@ -37,10 +37,13 @@ $('.newbooking').click(function (event) {
          if(response.data.color=="red")
          {
           $("#checkname1").css("color","red");
+          
          }
          else
          {
            $("#checkname1").css("color","green");
+           $('.newbooking').classList.add('disabled');
+           $('.newbooking').innerHTML='Booked';
          }
          $("#checkname1").animate({ opacity: 1 });
           
@@ -73,7 +76,7 @@ $('.newbooking').click(function (event) {
      axios.post("/api/newsletter", {
        email: x
      }).then(response => {
-       console.log(response);
+      
        $("#checkemail").text(response.data.message);
        if(response.data.color=="red")
        {
@@ -81,7 +84,8 @@ $('.newbooking').click(function (event) {
        }
        else
        {
-         $("#checkemail").css("color","green");
+         $("#checkemail").css("color","yellow");
+
        }
        $("#checkemail").animate({ opacity: 1 });
    

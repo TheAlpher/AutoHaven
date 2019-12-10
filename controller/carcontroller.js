@@ -102,7 +102,7 @@ module.exports.addnewbooking= async(req,res)=>{
   if(req.body.location=="Pick Location"||!req.body.date || !req.body.days)
   {
     res.json({
-      message:"All fields are compulsory"
+      message:"All fields are compulsory",color:"red"
     })
   }
   else{
@@ -114,7 +114,7 @@ Booking.create(req.body)
     res.json({
          
          booking:book1,
-        message: 'Booking confirmed  for  '+ book1.fName +"   on date " +book1.date
+        message: 'Booking confirmed  for  '+ book1.fName +"   on date " +book1.date,color:"green"
     })
 }).catch(err=> {
   console.log(err);

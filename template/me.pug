@@ -57,16 +57,16 @@ include nav
             #menu1.tab-pane.fade
                 if(bookings)
                     .row.d-flex.justify-content-center.col-lg-12.mt-5
-                        .col-lg-10.d-flex.justify-content-center                         
+                        .row.d-flex.justify-content-center                         
                             for booking in bookings    
-                                .card.mx-3(style='width: 18rem;')
+                                .col-lg-3.card.mx-1.mt-1(style='width: 18rem;')
                                     img.card-img-top(src=booking.carinfo alt='...')
                                     .card-body
                                         h5.card-title #{booking.carbrand} #{booking.carmodel}
                                         p.card-text
                             
                                     ul.list-group.list-group-flush
-                                        li.list-group-item.text-info Booked for #{booking.date}
+                                        li.list-group-item.text-info Booked on #{booking.date}
                                         li.list-group-item.text-warning For #{booking.days} days
                                         li.list-group-item.text-success at #{booking.carrent}$ /day
                                     .card-body
