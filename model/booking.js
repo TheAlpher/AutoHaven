@@ -1,9 +1,9 @@
 const mongoose=require("mongoose");
 const validator = require("validator");
 const locationschema=new mongoose.Schema({
- x: {type:mongoose.Decimal128, required:true   
+ x: {type:Number, required:true   
 },y:{
-    type:mongoose.Decimal128,required:true
+    type:Number,required:true
 }
 })
 const UserSchema = new mongoose.Schema({
