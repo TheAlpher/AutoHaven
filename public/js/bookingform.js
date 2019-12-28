@@ -141,7 +141,7 @@ var myLatLng = {lat: 28.6476, lng: 77.1181};
 var myRadius=40000;
 map = new google.maps.Map(document.getElementById('map'), {
 center: myLatLng,
-zoom: 8.5,
+zoom: 7,
 disableDoubleClickZoom: true,
 mapTypeId:google.maps.MapTypeId.HYBRID ,// disable the default map zoom on double click
 disableDefaultUI: true
@@ -197,7 +197,7 @@ function setMapOnAll(map) {
 // });
 map.addListener('click',function(e){
   $('#mapcheck').css('color','red');
-  $('#mapcheck').text("Sorry, We are unable to provide services in the given location");
+  $('#mapcheck').text("We dont server here yet");
 
 })
 
