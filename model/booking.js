@@ -1,10 +1,11 @@
 const mongoose=require("mongoose");
 const validator = require("validator");
 const locationschema=new mongoose.Schema({
- x: {type:Number, required:true   
+ x: {type:mongoose.Decimal128, required:true   
 },y:{
-    type:Number,required:true
-}})
+    type:mongoose.Decimal128,required:true
+}
+})
 const UserSchema = new mongoose.Schema({
 
     fName: {
