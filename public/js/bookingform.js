@@ -1,5 +1,7 @@
 
-$('.newbooking').click(function (event) {
+
+let location1={x: 28.6476, y: 77.1181};
+$('#newbooking').click(function (event) {
     console.log("inside booking")
      // Don't follow the link
      event.preventDefault();
@@ -11,7 +13,9 @@ $('.newbooking').click(function (event) {
      const carmodel = document.getElementById("carmodel").value;
      const carrent = document.getElementById("carrent").value;
      const contact = document.getElementById("tel").value;
-     const location = document.getElementById("picklocation").value;
+
+      
+
      const date = document.getElementById("date").value;
      const days= document.getElementById("days").value;
      console.log("checkname type= "+typeof($('#checkname').text()));
@@ -24,7 +28,7 @@ $('.newbooking').click(function (event) {
        carbrand:carbrand,
        carmodel:carmodel,
        carrent:carrent,
-       location:location,
+       location:location1,
        date:date,
        days:days,
        contact:contact,
@@ -37,23 +41,32 @@ $('.newbooking').click(function (event) {
          if(response.data.color=="red")
          {
           $("#checkname1").css("color","red");
+          $("#checkname1").animate({ opacity: 1 });
           
+          setTimeout(function () { $("#checkname1").animate({ opacity: 0 });$("#checkname1").css("display", 'hidden');
+ 
+      }, 2000);
          }
          else
          {
            $("#checkname1").css("color","green");
-           $('.newbooking').classList.add('disabled');
-           $('.newbooking').innerHTML='Booked';
-         }
-         $("#checkname1").animate({ opacity: 1 });
+           document.getElementById('newbooking').classList.add('disabled');
+           document.getElementById('newbooking').innerHTML='Booked';
+           $("#checkname1").animate({ opacity: 1 });
           
-         setTimeout(function () { $("#checkname1").animate({ opacity: 0 });$("#checkname1").css("display", 'hidden');
-     }, 2000);
-         
+           setTimeout(function () { $("#checkname1").animate({ opacity: 0 });$("#checkname1").css("display", 'hidden');
+  
+       }, 2000);
+        
+           window.setTimeout(() => {
+            location.assign("/me");
+          }, 500);  }
+        
  
    
    
        })
+
    });
    $('.click-me-2').click(function async(event) {
  
@@ -93,7 +106,6 @@ $('.newbooking').click(function (event) {
        $("#checkemail").css("display", 'hidden');
      })
    
-<<<<<<< HEAD
    });
 
 
@@ -244,6 +256,3 @@ map.panTo(latLng);
 
 }
 
-=======
-   });
->>>>>>> parent of 79aaa56... Booking Form updated

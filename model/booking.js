@@ -1,15 +1,13 @@
 const mongoose=require("mongoose");
 const validator = require("validator");
-<<<<<<< HEAD
 const locationschema=new mongoose.Schema({
  x: {type:Number, required:true   
 },y:{
     type:Number,required:true
 }
 })
-=======
->>>>>>> parent of 79aaa56... Booking Form updated
 const UserSchema = new mongoose.Schema({
+
     fName: {
          type: String,required:true
      },
@@ -34,10 +32,7 @@ const UserSchema = new mongoose.Schema({
    carrent: {
     type: Number,required:true
 },    
-     location: {
-         type: String,required:true
-        
-     },
+     location: [locationschema],
      date: {
          type: Date,
          required:true

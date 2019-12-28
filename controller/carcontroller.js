@@ -99,10 +99,16 @@ let val3;
 module.exports.addnewbooking= async(req,res)=>{
 
   console.log("req.body.location");
-  if(req.body.location=="Pick Location"||!req.body.date || !req.body.days)
+  if(!req.body.date || !req.body.days)
   {
     res.json({
       message:"All fields are compulsory",color:"red"
+    })
+  }
+  else if(req.body.location.x==28.6476 && req.body.location.y==77.1181)
+  {
+    res.json({
+      message:"Please select a location",color:"red"
     })
   }
   else{
