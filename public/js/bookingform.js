@@ -157,7 +157,7 @@ var myCircle= new google.maps.Circle({
   radius:myRadius
 });
 
-placeMarkerAndPanTo(myLatLng, map);
+placeMarkerAndPanTo1(myLatLng, map);
 function setMapOnAll(map) {
   for (var i = 1; i < markers.length; i++) {
     markers[i].setMap(map);
@@ -197,7 +197,7 @@ function setMapOnAll(map) {
 // });
 map.addListener('click',function(e){
   $('#mapcheck').css('color','red');
-  $('#mapcheck').text("We dont server here yet");
+  $('#mapcheck').text("Sorry, We dont serve here yet");
 
 })
 
@@ -247,10 +247,28 @@ var marker = new google.maps.Marker({
   map: map
 });
 
+
 markers.push(marker);
 map.panTo(latLng);
 }
 
+function placeMarkerAndPanTo1(latLng, map) {
+  var icon1={
+    url:"../img/marker.png",
+    scaledSize:new google.maps.Size(25,30),
+    origin: new google.maps.Point(0,0)
+  }
+  var marker = new google.maps.Marker({
+    position: latLng,
+    map: map,
+    icon:icon1
+  });
+  
+  
+  markers.push(marker);
+  map.panTo(latLng);
+  }
+  
 
 
 
