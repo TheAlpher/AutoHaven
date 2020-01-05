@@ -141,7 +141,7 @@ var myLatLng = {lat: 28.6476, lng: 77.1181};
 var myRadius=40000;
 map = new google.maps.Map(document.getElementById('map'), {
 center: myLatLng,
-zoom: 7,
+zoom: 8.5,
 disableDoubleClickZoom: true,
 mapTypeId:google.maps.MapTypeId.HYBRID ,// disable the default map zoom on double click
 disableDefaultUI: true
@@ -254,8 +254,8 @@ map.panTo(latLng);
 
 function placeMarkerAndPanTo1(latLng, map) {
   var icon1={
-    url:"../img/marker.png",
-    scaledSize:new google.maps.Size(25,30),
+    url:"../img/home/marker.svg",
+    scaledSize:new google.maps.Size(50,50),
     origin: new google.maps.Point(0,0)
   }
   var marker = new google.maps.Marker({
