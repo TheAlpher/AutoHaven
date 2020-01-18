@@ -182,7 +182,7 @@ border:2px solid rgb(187, 199, 26);
     margin-top:3vmax;
   
     /* margin-bottom:1vmax; */
-    background:linear-gradient(white,rgb(218, 217, 217));
+    background:linear-gradient(white,rgb(218, 217, 217) ,white);
 }
 .team-member-pro-pic{
    
